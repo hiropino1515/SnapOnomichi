@@ -1,0 +1,25 @@
+@use "global" as *;
+
+.button {
+  display: inline-block;
+  padding: 6px 24px 8px 24px;
+  border-radius: rem(40);
+  border: 2px solid var(--LP-Blown, $blown);
+  background: var(--LP-White, $white);
+  box-shadow: 0px 4px 0px 0px $blown;
+  color: var(--LP-Blown, $blown);
+  font-feature-settings: 'pref' on;
+  font-family: $base-font-family;
+  font-size: rem(16);
+  font-style: normal;
+  font-weight: $bold;
+  line-height: calc(25.6 / 16); 
+}
+
+.button:hover {
+  background: var(--LP-Yellow, $accent-yellow);
+}
+
+.button:disabled {
+  background: var(--LP-Dark-Gray, $d-gray);
+}
