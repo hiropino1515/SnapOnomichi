@@ -13,4 +13,25 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     }
   });
 
+  // ページトップボタン
+  $(function () {
+    const pageTop = $("#to-top");
+    pageTop.hide();
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        pageTop.fadeIn();
+      } else {
+        pageTop.fadeOut();
+      }
+    });
+    pageTop.click(function () {
+      $("body,html").animate(
+        {
+          scrollTop: 0,
+        },
+        500
+      );
+      return false;
+    });
+
 });

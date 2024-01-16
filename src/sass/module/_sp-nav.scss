@@ -23,9 +23,9 @@
 
 .sp-nav__items {
   display: grid;
-  gap: rem(40);
   justify-content: center;
-  padding: rem(82) rem(114);
+  padding-top: rem(66);
+  padding-bottom: rem(148);
   min-height: 100vh;
   z-index: 300;
 }
@@ -35,13 +35,13 @@
   text-align: center;
 }
 
-.sp-nav__item ul li a {
-  text-align: left;
-  display: block;
+.sp-nav__item a {
+  display: inline-block;
   font-size: rem(14);
   color: $blown;
   font-family: $base-font-family;
   font-weight: $regular;
   line-height: calc(22.4 / 14);
+  height: inherit;
 }
 

@@ -18,8 +18,10 @@
 
 .button:hover {
   background: var(--LP-Yellow, $accent-yellow);
+  transition: .3s;
 }
 
 .button:disabled {
   background: var(--LP-Dark-Gray, $d-gray);
+  transition: .3s;
 }
