@@ -2,7 +2,7 @@
 
 .button {
   display: inline-block;
-  padding: 6px 24px 8px 24px;
+  padding: rem(6) 0 rem(8) 0;
   border-radius: rem(40);
   border: 2px solid var(--LP-Blown, $blown);
   background: var(--LP-White, $white);
@@ -14,6 +14,10 @@
   font-style: normal;
   font-weight: $bold;
   line-height: calc(25.6 / 16); 
+}
+
+.button  {
+  width: 100%;
 }
 
 .button:hover {

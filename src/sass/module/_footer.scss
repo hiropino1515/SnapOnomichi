@@ -60,25 +60,40 @@
 
 .footer__title {
   margin-top: rem(9);
+  text-align: center;
+  position: relative;
   @include mq('md') {
     margin-top: rem(30);
   }
 }
 
-.footer__title img {
-  object-fit: cover;
-  margin-left: auto;
-  margin-right: auto;
+.footer__title p {
+  position: absolute;
+  top: 0;
+  font-family: $en-font-family-2;
+  font-size: rem(44);
+  font-style: normal;
+  font-weight: $medium;
+  line-height: calc(55 / 44);
+  letter-spacing: 0.28em;
+  -webkit-text-stroke: 1px $sub-blue-d;
+  color: $sub-blue-l;
   @include mq('md') {
-    max-width: rem(755);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: rem(100);
+    line-height: calc(125 / 100);
   }
 }
 
+
 .footer__info {
+  margin-top: rem(48);
   display: flex;
   flex-direction: column;
   border-radius: rem(16);
   @include mq('md') {
+    margin-top: rem(120);
     flex-direction: row-reverse;
   }
 }

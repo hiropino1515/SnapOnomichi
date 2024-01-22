@@ -1,0 +1,147 @@
+@use "global" as *;
+
+.mv {
+  background-color: $sub-blue-l;
+  background-image: url(../images/common/mv-bgi-sp.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mv__lead {
+  color: var(--LP-Blown, $blown);
+  text-align: center;
+  text-shadow: 0px 0px 30px $white;
+  font-family: $en-font-family-2;
+  font-size: rem(14);
+  font-style: normal;
+  font-weight: $regular;
+  line-height: calc(17.5 / 14);
+}
+
+.mv__title1 {
+  margin-top: rem(20);
+  text-align: center;
+}
+
+.mv__title1 img {
+  width: rem(335);
+  display: inline-block;
+}
+
+.mv__title2 {
+  margin-top: rem(12);
+  text-align: center;
+}
+
+.mv__title2 img {
+  width: rem(240);
+  display: inline-block;
+}
+
+.mv__attention {
+  margin-top: rem(10);
+  display: flex;
+  gap: rem(58);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mv__attention-left img  {
+  width: rem(142);
+  height: auto;
+}
+
+.mv__attention-right img {
+  width: rem(110);
+  height: auto;
+}
+
+.mv__smartphone {
+  position: relative;
+}
+
+.mv__smartphone-image {
+  text-align: center;
+}
+
+.mv__smartphone-image img {
+  display: inline-block;
+  width: rem(200);
+  height: rem(408);
+  @include mq('md') {
+    width: rem(250);
+    height: rem(510);
+  }
+}
+
+.mv__smartphone-content {
+  width: rem(160);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mv__smartphone-heading {
+  border-radius: rem(12.8) rem(12.8) 0 0;
+  padding: rem(6.4) rem(18.5);
+  background: linear-gradient(265deg, #AC3790 -3.52%, #D65A5C 44.94%, #F4C06D 92.38%);
+  color: var(--LP-White, $white);
+  text-align: center;
+  font-feature-settings: 'pref' on;
+  font-family: $base-font-family;
+  font-size: rem(12.8);
+  font-style: normal;
+  font-weight: $bold;
+  line-height: calc(20.48 / 12.8);
+}
+
+.mv__smartphone-body {
+  border-radius: 0 0 rem(12.8) rem(12.8);
+  background-color: $white;
+  padding: rem(12.8) rem(14);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mv__smartphone-apply {
+  display: inline;
+  padding-bottom: rem(0.8);
+  border-bottom: rem(2.4) solid var(--LP-Red, $accent-red);
+  color: var(--LP-Blown, $blown);
+  font-family: $base-font-family;
+  font-size: rem(12);
+  font-style: normal;
+  font-weight: $regular;
+  line-height: calc(19.2 / 12);
+}
+
+.mv__smartphone-period {
+  color: var(--LP-Blown, $blown);
+  font-family: $base-font-family;
+  font-size: rem(12);
+  font-style: normal;
+  font-weight: $bold;
+  line-height: calc(19.2 / 12);
+}
+
+.mv__smartphone-button {
+  margin-top: rem(12.8);
+  text-align: center;
+  width: 100%;
+}
+
+.mv__smartphone-treat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
