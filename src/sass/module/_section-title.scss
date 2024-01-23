@@ -1,7 +1,7 @@
 @use 'global' as *;
 
 .section-title {
-
+  text-align: center;
 }
 
 .section-title__icon {
@@ -28,6 +28,8 @@
 .section-title__lead {
   margin-top: rem(6);
   padding-bottom: rem(6);
+  display: inline-block;
+  width: fit-content;
   color: var(--LP-Blown, $blown);
   text-align: center;
   font-family: $en-font-family-2;
