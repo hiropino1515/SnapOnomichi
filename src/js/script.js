@@ -33,5 +33,21 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       );
       return false;
     });
-
+    const swiper = new Swiper('.about__swiper', {
+      loop: true,
+      loopedSlides: 10,
+      autoplay: {
+          delay: 0,
+      },
+      speed: 3000,
+      width: 100,
+      spaceBetween: 10,
+      breakpoints: {
+        768: {
+          width: 200,
+          spaceBetween: 20,
+        },
+      },
+    })
+  });
 });

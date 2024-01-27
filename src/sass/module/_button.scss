@@ -2,7 +2,8 @@
 
 .button {
   display: inline-block;
-  padding: rem(6) 0 rem(8) 0;
+  text-align: center;
+  padding: rem(4) rem(24) rem(6) rem(24);
   border-radius: rem(40);
   border: 2px solid var(--LP-Blown, $blown);
   background: var(--LP-White, $white);
@@ -10,14 +11,17 @@
   color: var(--LP-Blown, $blown);
   font-feature-settings: 'pref' on;
   font-family: $base-font-family;
-  font-size: rem(16);
+  font-size: rem(14);
   font-style: normal;
   font-weight: $bold;
-  line-height: calc(25.6 / 16); 
-}
-
-.button  {
+  line-height: calc(22 / 14);
   width: 100%;
+  white-space: nowrap;
+  @include mq('md') {
+    padding: rem(11) rem(40) rem(13) rem(40);
+    font-size: rem(20);
+    line-height: calc(32 / 20);
+  }
 }
 
 .button:hover {

@@ -20,10 +20,6 @@ $en-font-family-2: 'Josefin Sans', sans-serif;
 
 // ※検証ツールでしっかり反映されているか確認する
 
-body {
-  font-family: $base-font-family;
-}
-
 // フォントウェイト
 $regular: 400;
 $medium: 500;
@@ -45,3 +41,8 @@ $white: #FFFFFF;
 $blown: #4A3636;
 $d-gray: #CCCCCC;
 $gray: #F5F5F5;
+
+body {
+  font-family: $base-font-family;
+  background-color: $sub-blue-l;
+}
