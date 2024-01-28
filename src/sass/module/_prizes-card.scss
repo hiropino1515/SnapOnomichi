@@ -1,0 +1,110 @@
+@use "global" as *;
+
+.prizes-card {
+  display: inline-block;
+  min-width: rem(160);
+  max-width: rem(440);
+  position: relative;
+}
+
+.prizes-card__icon {
+  padding: rem(5.76) rem(15.04) rem(5.64) rem(15.36);
+  min-width: rem(48);
+  max-width: rem(100);
+  aspect-ratio: 1 / 1;
+  background-image: url(../images/common/prizes-card_icon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  content: "";
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include mq('md') {
+    padding: rem(12) rem(31.33) rem(11.67) rem(32);
+    min-width: rem(100);
+    top: 9%;
+  }
+}
+
+.prizes-card__container {
+  margin-top: rem(24);
+  border-radius: rem(10);
+  background-color: $gray;
+  @include mq('md') {
+    margin-top: rem(50);
+  }
+}
+
+
+.prizes-card__benefits {
+  color: var(--LP-White, $white);
+  text-align: center;
+  font-family: $base-font-family;
+  font-size: rem(7.68);
+  font-style: normal;
+  font-weight: $bold;
+  line-height: calc(12.288 / 7.78);
+  @include mq('md') {
+    font-size: rem(16);
+    line-height: calc(25.6 / 16);
+  }
+}
+
+.prizes-card__number {
+  color: var(--LP-White, $white);
+  text-align: center;
+  font-family: $en-font-family-2;
+  font-size: rem(23.04);
+  font-style: normal;
+  font-weight: $bold;
+  line-height: 1; /* 23.04px */
+  @include mq('md') {
+    font-size: rem(48);
+  }
+}
+
+.prizes-card__image {
+  height: auto;
+}
+
+.prizes-card__image img {
+  border-radius: rem(10) rem(10) 0 0;
+  aspect-ratio: 160 / 140;
+  object-fit: cover;
+  min-width: rem(160);
+  max-width: rem(440);
+}
+
+.prizes-card__body {
+  padding: rem(9) rem(8);
+  min-height: rem(56);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/common/prizes-card_zoom-icon.png),url(../images/common/prizes-card_triangle.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: rem(11) rem(11), rem(36) rem(36);
+  background-position: 98% 85%, bottom right;
+  border-radius: 0 0 rem(10) 0;
+  @include mq('md') {
+    min-height: rem(116);
+    max-height: rem(116);
+    padding: rem(28) rem(16);
+    background-size: rem(32) rem(32), rem(100) rem(100);
+  }
+}
+
+.prizes-card__body p {
+  color: var(--LP-Blown, $blown);
+  text-align: center;
+  font-family: $base-font-family;
+  font-size: rem(12);
+  font-style: normal;
+  font-weight: $bold;
+  line-height: calc(19.2 / 12);
+  @include mq('md') {
+    font-size: rem(20);
+    line-height: calc(32 / 20);
+  }
+}

@@ -1,0 +1,83 @@
+@use "global" as *;
+
+.prizes {
+
+}
+
+.prizes__inner.inner {
+  padding-bottom: rem(34);
+  background-color: $white;
+  max-width: rem(1024);
+  border-radius: rem(24);
+  @include mq('md') {
+    padding-bottom: rem(53);
+  }
+}
+
+.prizes__title {
+
+}
+
+.prizes__lead {
+  margin-top: rem(16);
+  color: var(--LP-Blown, $blown);
+  text-align: center;
+  font-family: $base-font-family;
+  font-size: rem(12);
+  font-style: normal;
+  font-weight: $regular;
+  line-height: calc(19.2 / 12);
+  @include mq('md') {
+    font-size: rem(16);
+    line-height: calc(25.6 / 16);
+  }
+}
+
+.prizes__list {
+  margin-top: rem(24);
+  @include mq('md') {
+    margin-top: rem(32);
+  }
+}
+
+.prizes__item {
+
+}
+
+.prizes__button {
+  margin-top: rem(16);
+  max-width: rem(437);
+  margin-inline: auto;
+  @include mq('md') {
+    margin-top: rem(40);
+  }
+}
+
+.prizes__bg {
+  aspect-ratio: 580 / 260;
+  background-image: url(../images/common/prizes_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  @include mq('md') {
+    background-image: url(../images/common/prizes_bg-pc.jpg);
+    aspect-ratio: 1512 / 640;
+  }
+}
+
+.prizes__bg::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: rem(45.714);
+  background-image: url(../images/common/footer_bg_wave_sp.png);
+  background-repeat: repeat-x;
+  background-size: contain;
+  @include mq('md') {
+    background-image: url(../images/common/footer_bg_wave_pc.png);
+    height: rem(120);
+  }
+}

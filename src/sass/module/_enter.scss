@@ -14,6 +14,7 @@
 
 .enter__list {
   margin-top: rem(32);
+  margin-inline: auto;
   @include mq('md') {
     margin-top: rem(40);
     display: flex;
@@ -26,7 +27,7 @@
   text-align: center;
   width: 100%;
   @include mq('md') {
-    width: rem(320);
+    max-width: rem(320);
   }
 }
 
@@ -68,11 +69,11 @@
 }
 
 .enter__item-image {
-  width: rem(196);
+  min-width: rem(196);
+  max-width: rem(280);
   aspect-ratio: 196 / 210;
   display: inline-block;
   @include mq('md') {
-    width: rem(280);
     aspect-ratio: 280 / 300;
   }
 }
@@ -105,6 +106,7 @@
   font-style: normal;
   font-weight: $regular;
   line-height: calc(19.2 / 12);
+  white-space: nowrap;
   @include mq('md') {
     font-size: rem(16);
     line-height: calc(25.6 / 16);

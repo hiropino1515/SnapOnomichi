@@ -1,0 +1,109 @@
+@use "global" as *;
+
+.recommended-spots {
+  background-color: $sub-blue-d;
+  padding-bottom: rem(19.84);
+}
+
+.recommended-spots__inner {
+
+}
+
+.recommended-spots__container {
+  @include mq('md') {
+    display: flex;
+  }
+}
+
+.recommended-spots__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include mq('md') {
+    writing-mode: vertical-rl
+  }
+}
+
+.recommended-spots__title span {
+  width: rem(28);
+  height: rem(28);
+  background-image: url(../images/common/recommended-spots_star.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include mq('md') {
+    width: rem(39.932);
+    height: rem(38.164);
+  }
+}
+
+.recommended-spots__title h2 {
+  margin-left: rem(8);
+  color: var(--LP-White, $white);
+  text-align: center;
+  font-feature-settings: 'pwid' on;
+  font-family: $second-font-family;
+  font-size: rem(28);
+  font-style: normal;
+  font-weight: $medium;
+  line-height: calc(35 / 28);
+  @include mq('md') {
+    margin-left: 0;
+    margin-top: rem(8);
+    font-size: rem(40);
+    line-height: calc(50 / 40);
+  }
+}
+
+.recommended-spots__swiper {
+  margin-top: rem(24);
+}
+
+.recommended-spots__contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include mq('md') {
+    margin-top: rem(64);
+    flex-direction: initial;
+    justify-content: space-between;
+  }
+}
+
+.recommended-spots__image {
+  width: rem(255);
+  @include mq('md') {
+    width: rem(495);
+  }
+}
+
+.recommended-spots__image img {
+  aspect-ratio: 255 / 55;
+  @include mq('md') {
+    aspect-ratio: 495 / 107;
+  }
+}
+
+.recommended-spots__body {
+
+}
+
+.recommended-spots__text {
+  margin-top: rem(16);
+  color: var(--LP-White, $white);
+  text-align: center;
+  font-family: $base-font-family;
+  font-size: rem(11.444);
+  font-style: normal;
+  font-weight: $regular;
+  line-height: calc(18.311 / 11.444);
+  @include mq('md') {
+    margin-top: 0;
+    font-size: rem(16);
+    line-height: calc(25.6 / 16);
+  }
+}
+
+.recommended-spots__button {
+  margin-top: rem(24);
+}

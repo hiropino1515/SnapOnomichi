@@ -33,6 +33,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       );
       return false;
     });
+    // about__swiper
     const swiper = new Swiper('.about__swiper', {
       loop: true,
       loopedSlides: 10,
@@ -41,6 +42,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       },
       speed: 3000,
       width: 100,
+
       spaceBetween: 10,
       breakpoints: {
         768: {
@@ -49,5 +51,28 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         },
       },
     })
+  });
+
+  var swiper = new Swiper(".recommended-spots__swiper", {
+    loop: true,
+    loopedSlides: 7,
+    width: 240,
+    spaceBetween: 16,
+    autoplay: {
+      delay: 3000,
+    },
+
+    breakpoints: {
+      768: {
+        width: 344,
+        spaceBetween: 32,
+      },
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
   });
 });
