@@ -1,0 +1,36 @@
+@use "global" as *;
+
+.contact {
+
+}
+
+.contact__inner {
+
+}
+
+.contact__title {
+
+}
+
+.contact__lead {
+  margin-top: rem(24);
+  color: var(--LP-Blown, $blown);
+  text-align: center;
+  font-family: $base-font-family;
+  font-size: rem(12);
+  font-style: normal;
+  font-weight: $regular;
+  line-height: calc(19.2 / 12);
+  @include mq('md') {
+    margin-top: rem(32);
+    font-size: rem(16);
+    line-height: calc(25.6 / 19.2);
+  }
+}
+
+.contact__form {
+  margin-top: rem(24);
+  @include mq('md') {
+    margin-top: rem(40);
+  }
+}

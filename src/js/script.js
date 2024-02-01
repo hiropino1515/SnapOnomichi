@@ -33,6 +33,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       );
       return false;
     });
+
     // about__swiper
     const swiper = new Swiper('.about__swiper', {
       loop: true,
@@ -56,15 +57,17 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   var swiper = new Swiper(".recommended-spots__swiper", {
     loop: true,
     loopedSlides: 7,
-    width: 240,
+    slidesPerView: 1.55, // 一度に表示する枚数
+    centeredSlides: true, // アクティブなスライドを中央にする
     spaceBetween: 16,
     autoplay: {
-      delay: 3000,
+      delay: 2500,
     },
 
     breakpoints: {
       768: {
-        width: 344,
+        slidesPerView: 3.25, // 一度に表示する枚数
+        centeredSlides: false, // アクティブなスライドを中央にする
         spaceBetween: 32,
       },
     },
@@ -75,4 +78,18 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       prevEl: '.swiper-button-prev',
     },
   });
+
+   // アコーディオン
+   $(function () {
+    // 最初は閉じた状態に
+    $(".faq__accordion .js-accordion + .faq__answer").hide();
+    // タイトルをクリックすると
+    $(".js-accordion").on("click", function () {
+      // クリックした次の要素を開閉
+      $(this).next(".faq__answer").slideToggle(300);
+      // タイトルにopenクラスを付け外ししてプラスマイナスを変更
+      $(this).toggleClass("open",300);
+    });
+  });
+
 });

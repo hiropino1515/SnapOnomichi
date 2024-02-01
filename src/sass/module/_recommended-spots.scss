@@ -3,6 +3,63 @@
 .recommended-spots {
   background-color: $sub-blue-d;
   padding-bottom: rem(19.84);
+
+  .swiper-button-prev {
+    display: none;
+    @include mq('md') {
+      display: block;
+      position: absolute;
+      width: rem(80);
+      height: rem(80);
+      top: 75.6%;
+      left: 19%;
+      background-image: url(../images/common/swiper-button-bg.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  
+  .swiper-button-prev::after {
+    content: "";
+    position: absolute;
+    width: rem(57);
+    height: rem(57);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../images/common/swiper-arrow-left.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .swiper-button-next {
+    display: none;
+    @include mq('md') {
+      display: block;
+      position: absolute;
+      width: rem(80);
+      height: rem(80);
+      top: 75.6%;
+      right: 19%;
+      background-image: url(../images/common/swiper-button-bg.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  
+  .swiper-button-next::after {
+    content: "";
+    position: absolute;
+    width: rem(57);
+    height: rem(57);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../images/common/swiper-arrow-right.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
 }
 
 .recommended-spots__inner {
@@ -12,6 +69,7 @@
 .recommended-spots__container {
   @include mq('md') {
     display: flex;
+    gap: rem(32);
   }
 }
 
@@ -20,7 +78,8 @@
   justify-content: center;
   align-items: center;
   @include mq('md') {
-    writing-mode: vertical-rl
+    writing-mode: vertical-rl;
+    justify-content: start;
   }
 }
 
@@ -56,6 +115,12 @@
 
 .recommended-spots__swiper {
   margin-top: rem(24);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  @include mq('md') {
+    margin-top: 0;
+    margin-left: 0;
+  }
 }
 
 .recommended-spots__contents {
@@ -106,4 +171,27 @@
 
 .recommended-spots__button {
   margin-top: rem(24);
+}
+
+.recommended-spots__bg {
+  position: relative;
+}
+
+.recommended-spots__bg::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: rem(19);
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: rem(45.714);
+  background-image: url(../images/common/recommended-spots_bg_wave.svg);
+  background-repeat: repeat-x;
+  background-size: contain;
+  @include mq('md') {
+    background-image: url(../images/common/recommended-spots_bg_wave-pc.svg);
+    top: rem(4);
+    height: rem(120);
+  }
 }

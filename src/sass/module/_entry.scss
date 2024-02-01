@@ -1,0 +1,125 @@
+@use "global" as *;
+
+.entry {
+
+}
+.entry__inner {
+
+}
+
+.entry__container {
+  padding: rem(24) rem(23.5);
+  background-color: $white;
+  @include mq('md') {
+    padding: rem(40) rem(56);
+  }
+}
+
+.entry__title {
+
+}
+
+.entry__list {
+  margin-top: rem(24);
+  @include mq('md') {
+    margin-top: rem(40);
+  }
+}
+
+.entry__item {
+  padding-bottom: rem(16);
+  border-bottom: 1px solid var(--LP-Dark-Gray, $d-gray);
+  @include mq('md') {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.entry__list .entry__item:last-child {
+  border-bottom: none;
+}
+
+.entry__item:not(:first-child) {
+  margin-top: rem(12);
+}
+
+.entry__item-title {
+  display: flex;
+  align-items: center;
+  @include mq('md') {
+    width: 26.315%;
+    flex-shrink: 0;
+    align-items: baseline;
+  }
+}
+
+.entry__item-title span {
+  width: 8px;
+  height: 8px;
+  background-image: url(../images/common/entry_item-title_list.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.entry__item-title p {
+  margin-left: rem(8);
+  color: var(--LP-Blown, $blown);
+  font-family: $base-font-family;
+  font-size: rem(14);
+  font-style: normal;
+  font-weight: $bold;
+  line-height: calc(22.4 / 14);
+  @include mq('md') {
+    font-size: rem(16);
+    line-height: calc(25.6 / 16);
+  }
+}
+
+.entry__item-text {
+  margin-top: rem(8);
+  @include mq('md') {
+    width: 73.684%;
+  }
+}
+
+.entry__item-text ul {
+  padding-left: rem(16);
+}
+
+.entry__item-text li {
+  list-style-type: disc;
+  list-style-position: outside;
+  color: var(--LP-Blown, $blown);
+  font-family: $base-font-family;
+  font-size: rem(12);
+  font-style: normal;
+  font-weight: $regular;
+  line-height: calc(19.2 / 12);
+  @include mq('md') {
+    font-size: rem(16);
+    line-height: calc(25.6 / 16);
+  }
+}
+
+.entry__item-text li span {
+  text-decoration-line: underline;
+}
+
+.entry__item-text li a {
+  text-decoration-line: underline;
+}
+
+.entry__bg {
+  margin-top: rem(32);
+  @include mq('md') {
+    margin-top: rem(120);
+  }
+}
+
+.entry__bg img {
+  aspect-ratio: 375 / 99;
+  object-fit: cover;
+  @include mq('md') {
+    aspect-ratio: 1512 / 400;
+  }
+}
