@@ -11,8 +11,8 @@
       position: absolute;
       width: rem(80);
       height: rem(80);
-      top: 75.6%;
-      left: 19%;
+      top: 94.6%;
+      left: 4%;
       background-image: url(../images/common/swiper-button-bg.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -39,7 +39,7 @@
       position: absolute;
       width: rem(80);
       height: rem(80);
-      top: 75.6%;
+      top: 94.6%;
       right: 19%;
       background-image: url(../images/common/swiper-button-bg.png);
       background-repeat: no-repeat;
@@ -70,6 +70,7 @@
   @include mq('md') {
     display: flex;
     gap: rem(32);
+    position: relative;
   }
 }
 
