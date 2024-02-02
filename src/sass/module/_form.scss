@@ -16,12 +16,12 @@ $padding-lnr: rem(16);//paddingの指定（左右） inputの内側の余白で�
 $border-r: rem(8);//border-radius（テキスト系）
 
 /*ボタン系の指定*/
-$fz-btn: rem(14);//送信ボタンのfont-size
+$fz-btn: rem(16);//送信ボタンのfont-size
 $back-cr-btn: transparent linear-gradient(90deg, #7633a4 0%, #250d65 100%) 0% 0% no-repeat padding-box;//ボタンの背景色
-$font-cr-btn: white;//ボタンのフォントカラー
-$padding-und-btn: rem(20);//paddingの指定（上下） btnの内側の余白で使う
-$padding-lnr-btn: rem(72);//paddingの指定（左右） btnの内側の余白で使う
-$border-r-btn: rem(50);
+$font-cr-btn: $blown;//ボタンのフォントカラー
+$padding-und-btn: rem(8);//paddingの指定（上下） btnの内側の余白で使う
+$padding-lnr-btn: rem(24);//paddingの指定（左右） btnの内側の余白で使う
+$border-r-btn: rem(40);
 
 /*ラジオボタンの指定*/
 $radio-fz: rem(14);//フォントサイズ
@@ -40,7 +40,7 @@ $check-bg-cr: $gray;//外枠の背景色
 // $check-border-cr: #f00;//外枠の色
 $check-bg-cr-inner: $main;//チェックマークの背景色
 $check-space: rem(12);//チェックマークと文字の距離
-// $check-space-betweenRadio: rem(20);//ラジオボタンの間の距離
+$check-space-betweenRadio: rem(20);//ラジオボタンの間の距離
 $check-weight: 2px;//チェックマークの線の太さ(px)
 
 /*テキストエリアの指定*/
@@ -64,7 +64,6 @@ textarea {
 	font-size: $fz;
 	padding: $padding-und $padding-lnr;
 	width: 100%;
-  max-width: rem(628);
 	background: $gray;
 	// border: 1px solid $border-cr-default;
 	border-radius: $border-r;
@@ -73,8 +72,12 @@ textarea {
 	// 	border: 1px solid $border-cr;
 	// }
 	/*↓↓選択されているときの色*/
+	@include mq('md') {
+		margin-top: 0;
+	}
 	&:focus {
-		border: 1px solid $border-cr;
+		border: 1px solid $main;
+		background: var(--LP-Light-Blue, $sub-blue-l);
 	}
 
   ::placeholder {
@@ -106,10 +109,13 @@ button,
 	border: none;
 	border-radius: 0;
 	/*↓カスタム */
-	padding: $padding-und-btn $padding-lnr-btn;
-	background: $back-cr-btn;
+	padding: 6px $padding-lnr-btn $padding-und-btn;
+	background: $white;
+	border: 2px solid var(--LP-Blown, $blown);
+	box-shadow: 0px 4px 0px 0px $blown;
 	color: $font-cr-btn;
 	font-size: $fz-btn;
+	font-weight: $bold;
 	cursor: pointer;
 	transition: 0.3s ease;
   border-radius: $border-r-btn;
@@ -141,10 +147,13 @@ button,
 			height: $radio-size;
 			display: block;
 		}
+		&:hover::before {
+			border: 1px solid $main;
+		}
 
 		&::after {
 			opacity: 0;
-			transition: 0.3s ease;
+			transition: 0.3s;
 		}
 	}
 
@@ -177,6 +186,9 @@ button,
 		line-height: 1;
 		cursor: pointer;
 		transition: 0.3s ease;
+		@include mq('md') {
+			font-size: rem(16);
+		}
 
 		&::before {
 			position: absolute;
@@ -185,6 +197,7 @@ button,
 			left: 0;
 			transform: translateY(-50%);
 			background: $check-bg-cr;
+			border-radius: 4px;
 			// border: 1px solid $check-border-cr;
 			width: $check-size;
 			height: $check-size;
@@ -202,13 +215,13 @@ button,
 			content: "";
 			position: absolute;
 			top: 50%;
-			left: 0;
+			left: 2px;
 			display: block;
 			opacity: 1;
 			/*チェックマークじゃない場合は以下を変更する*/
 			transform: translateY(-50%) rotate(-45deg);
-			width: calc($check-size * 0.9);
-			height: calc($check-size * 0.5);
+			width: calc($check-size * 0.7);
+			height: calc($check-size * 0.4);
 			margin-top: -0.1em;
 			margin-left: 0.1em;
 			border-left: $check-weight solid $check-bg-cr-inner;
@@ -230,24 +243,30 @@ select {
   margin-top: rem(8);
 	font-size: $fz;
 	padding: $padding-und $padding-lnr;
-	background-color: $gray;
   // border: 1px solid $border-cr-default;
   border-radius: $border-r;
 	/*↓デフォルトのアイコンを消す場合はコメントアウト（noneにする）*/
 	// appearance: auto;
 	/*↓デフォルトではないアイコンを使う場合は入力する*/
-	background-image: url(../images/common/contact_form-select_icon.svg);
-	background-position: right 12px center;
-	background-repeat: no-repeat;
+	background: 
+  url(../images/common/contact_form-select_icon.svg) right 11.5px center no-repeat,
+  linear-gradient(to right, $gray 0%, $gray calc(100% - 52px), $main calc(100% - 52px), $main 100%);
+	@include mq('md') {
+		margin-top: 0;
+	}
 	&:focus {
-		border: 1px solid $border-cr;
+		border: none;
 	}
 }
 
 textarea {
 	height: $textarea-height;
   width: 100%;
-  max-width: rem(600);
+
+	&:focus {
+		border: 1px solid $main;
+		background: var(--LP-Light-Blue, $sub-blue-l);
+	}
 }
 
 .form {
@@ -255,8 +274,20 @@ textarea {
 }
 
 .form__item {
-
+	@include mq('md') {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
 }
+
+.form__item.form__item--message {
+	@include mq('md') {
+		align-items: start;
+	}
+}
+
+
 
 .form__item:not(:first-child) {
   margin-top: rem(24);
@@ -270,6 +301,10 @@ textarea {
   font-style: normal;
   font-weight: $bold;
   line-height: calc(25.6 / 16);
+	@include mq('md') {
+		width: 26%;
+		flex-shrink: 0;
+	}
 }
 
 .form__item dt span {
@@ -285,6 +320,12 @@ textarea {
   background: var(--LP-Red, $accent-red);
 }
 
+.form__item dd {
+	@include mq('md') {
+		width: 74%;
+	}
+}
+
 .form__checkbox {
   margin-top: rem(24);
   text-align: center;
@@ -293,8 +334,17 @@ textarea {
   }
 }
 
+.form__checkbox a {
+	text-decoration: underline;
+	&:hover {
+		color: $main;
+		transition: all .3s;
+	}
+}
+
 .form__button {
   margin-top: rem(24);
+	text-align: center;
   @include mq('md') {
     margin-top: rem(40);
   }

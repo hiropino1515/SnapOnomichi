@@ -25,7 +25,6 @@
   padding-bottom: rem(25);
   text-align: center;
   @include mq('md') {
-    padding-top: rem(120);
     padding-bottom: rem(120);
   }
 }
@@ -69,7 +68,10 @@
 .footer__title p {
   position: absolute;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: $en-font-family-2;
+  text-indent: rem(8);
   font-size: rem(44);
   font-style: normal;
   font-weight: $medium;
@@ -78,8 +80,6 @@
   -webkit-text-stroke: 1px $sub-blue-d;
   color: $sub-blue-l;
   @include mq('md') {
-    left: 50%;
-    transform: translateX(-50%);
     font-size: rem(100);
     line-height: calc(125 / 100);
   }
