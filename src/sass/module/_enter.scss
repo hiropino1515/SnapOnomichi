@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .enter {
-
+  position: relative;
 }
 
 .enter__inner {
@@ -15,6 +15,8 @@
 .enter__list {
   margin-top: rem(32);
   margin-inline: auto;
+  position: relative;
+  z-index: 1;
   @include mq('md') {
     margin-top: rem(40);
     display: flex;
@@ -69,11 +71,11 @@
 }
 
 .enter__item-image {
-  min-width: rem(196);
-  max-width: rem(280);
+  width: rem(196);
   aspect-ratio: 196 / 210;
   display: inline-block;
   @include mq('md') {
+    width: rem(280);
     aspect-ratio: 280 / 300;
   }
 }
@@ -113,7 +115,7 @@
   }
 }
 
-.enter__item-underline {
+.enter__item-link {
   color: var(--LP-Blown, $blown);
   text-align: center;
   font-feature-settings: 'pref' on;
@@ -123,6 +125,11 @@
   font-weight: $regular;
   line-height: calc(19.2 / 12);
   text-decoration-line: underline;
+  &:hover {
+    transition: all 0.3s;
+    color: $main;
+    cursor: pointer;
+  }
   @include mq('md') {
     font-size: rem(16);
     line-height: calc(25.6 / 16);
@@ -138,6 +145,11 @@
   gap: rem(8);
   width: rem(226);
   background: var(--LP-White, $white);
+  &:hover {
+    transition: 0.3s;
+    background: $accent-yellow;
+    cursor: pointer;
+  }
   @include mq('md') {
     width: rem(254);
   }
@@ -196,5 +208,113 @@
   margin-inline: auto;
   @include mq('md') {
     margin-top: rem(40);
+  }
+}
+
+.enter__bg-cat1 {
+  content: "";
+  position: absolute;
+  top: rem(16);
+  right: calc(50% - min(50vw, 32rem));
+  width: rem(94);
+  height: rem(80);
+  background-image: url(../images/common/enter_bg_cat1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include mq('md') {
+    background-image: url(../images/common/enter_bg_cat1-pc.png);
+    right: calc(45% - min(48vw, 36rem));
+    width: rem(214);
+    height: rem(181);
+  }
+}
+
+.enter__bg-cat2 {
+  content: "";
+  position: absolute;
+  top: rem(8);
+  right: calc(45% - min(30vw, 32rem));
+  width: rem(105);
+  height: rem(63);
+  background-image: url(../images/common/enter_bg_cat2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include mq('md') {
+    background-image: url(../images/common/enter_bg_cat2-pc.png);
+    right: calc(50% - min(35vw, 36rem));
+    width: rem(238);
+    height: rem(141);
+  }
+}
+
+.enter__bg-pawpads-right1 {
+  content: "";
+  position: absolute;
+  top: rem(80);
+  right: calc(50% - min(45vw, 32rem));
+  width: rem(54);
+  height: rem(120);
+  background-image: url(../images/common/enter_bg_pawpads-right1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include mq('md') {
+    background-image: url(../images/common/enter_bg_pawpads-right1.png);
+    top: rem(160);
+    right: calc(40% - min(43vw, 36rem));
+    width: rem(100);
+    height: rem(220);
+  }
+}
+
+.enter__bg-pawpads-right2 {
+  content: "";
+  position: absolute;
+  top: rem(888);
+  right: calc(50% - min(45vw, 32rem));
+  width: rem(54);
+  height: rem(120);
+  background-image: url(../images/common/enter_bg_pawpads-right2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include mq('md') {
+    background-image: none;
+  }
+}
+
+.enter__bg-map {
+  content: "";
+  position: absolute;
+  top: rem(8);
+  left: calc(50% - min(50vw, 32rem));
+  width: rem(149);
+  height: rem(223);
+  background-image: url(../images/common/enter_bg_map.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 0;
+  @include mq('md') {
+    background-image: url(../images/common/enter_bg_map-pc.png);
+    top: rem(-24);
+    left: calc(40% - min(50vw, 36rem));
+    width: rem(420);
+    height: rem(628);
+  }
+}
+
+.enter__bg-pawpads-left {
+  content: "";
+  position: absolute;
+  top: rem(560);
+  left: calc(50% - min(45vw, 32rem));
+  width: rem(54);
+  height: rem(120);
+  background-image: url(../images/common/enter_bg_pawpads-left.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include mq('md') {
+    background-image: url(../images/common/enter_bg_pawpads-left-pc.png);
+    left: calc(40% - min(50vw, 36rem));
+    width: rem(100);
+    height: rem(220);
   }
 }

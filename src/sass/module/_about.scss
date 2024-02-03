@@ -4,60 +4,9 @@
   position: relative;
 }
 
-.about::before {
-  @include mq('md') {
-    content: "";
-    position: absolute;
-    top: rem(28);
-    left: calc(50% - min(86vw, 46rem));
-    width: rem(250);
-    height: rem(250);
-    background-image: url(../images/common/about_diagonal-line.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-}
-
-.about::after {
-  content: "";
-  position: absolute;
-  top: rem(28);
-  right: calc(50% - min(50vw, 32rem));
-  width: rem(54);
-  height: rem(120);
-  background-image: url(../images/common/about_bg_pawpads.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
 .about__inner {
   position: relative;
 }
-
-.about__inner::before {
-  content: "";
-  position: absolute;
-  background-image: url(../images/common/about_content_left.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: rem(200);
-  height: rem(200);
-  top: rem(393);
-  left: calc(50% - min(86vw, 42rem));
-}
-
-// .about__inner::after {
-//   content: "";
-//   position: absolute;
-//   background-image: url(../images/common/about_content_right.jpg);
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   width: rem(200);
-//   height: rem(200);
-//   top: rem(273);
-//   right: calc(50% - min(86vw, 42rem));
-//   overflow: hidden;
-// }
 
 .about__wrapper {
   padding: rem(40) rem(12);
@@ -87,7 +36,7 @@
   position: relative;
 }
 
-.about__title::before {
+.about__title-left {
   content: "";
   position: absolute;
   background-image: url(../images/common/about_left.jpg);
@@ -98,11 +47,16 @@
   top: 0;
   left: calc(50% - min(48vw, 8rem));
   @include mq('md') {
-    left: calc(50% - min(48vw, 16rem));
+    background-image: url(../images/common/about_title-left-pc.jpg);
+    transform: rotate(-8deg);
+    top: rem(12);
+    left: calc(50% - min(48vw, 21rem));
+    width: rem(134);
+    height: rem(99.999);
   }
 }
 
-.about__title::after {
+.about__title-right {
   content: "";
   position: absolute;
   background-image: url(../images/common/about_right.jpg);
@@ -113,7 +67,12 @@
   top: rem(-4);
   right: calc(50% - min(48vw, 8rem));
   @include mq('md') {
-    right: calc(50% - min(48vw, 16rem));
+    background-image: url(../images/common/about_title-right-pc.jpg);
+    transform: rotate(8deg);
+    right: calc(50% - min(48vw, 21rem));
+    width: rem(134);
+    height: rem(100);
+    top: rem(24);
   }
 }
 
@@ -127,13 +86,22 @@
   font-weight: $bold;
   line-height: calc(22.4 / 14);
   @include mq('md') {
+    margin-top: rem(32);
     font-size: rem(16);
     line-height: calc(25.6 / 16);
+    white-space: nowrap;
   }
+}
+
+.about__mycrocopy span {
+  display: inline-block;
 }
 
 .about__content {
   margin-top: rem(24);
+  @include mq('md') {
+    margin-top: rem(32);
+  }
 }
 
 .about__content p {
@@ -152,9 +120,12 @@
 
 .about__content p:not(:first-child) {
   margin-top: rem(19.2);
+  @include mq('md') {
+    margin-top: rem(25.6);
+  }
 }
 
-.about__content-underline {
+.about__content-link {
   color: var(--LP-Blown, #4A3636);
   font-family: $base-font-family;
   font-size: rem(12);
@@ -162,6 +133,11 @@
   font-weight: $regular;
   line-height: calc(19.2 / 12);
   text-decoration-line: underline;
+  &:hover {
+    transition: all 0.3s;
+    color: $main;
+    cursor: pointer;
+  }
   @include mq('md') {
     font-size: rem(16);
     line-height: calc(25.6 / 16);
@@ -188,6 +164,7 @@
   padding: rem(8) 0 ;
   width: rem(249);
   @include mq('md') {
+    margin-top: rem(32);
     width: rem(356);
   }
 }
@@ -214,6 +191,7 @@
   margin-right: auto;
   width: rem(192);
   @include mq('md') {
+    margin-top: rem(32);
     width: rem(260);
   }
 }
@@ -227,23 +205,13 @@
   }
 }
 
-.about__sakamichi {
-  background-image: url(../images/common/about_sakamichi.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: rem(216);
-  height: rem(433);
-  bottom: 0;
-  left: 0;
-}
-
-
-
 .about__logo {
   margin-top: rem(103.67);
   margin-inline: auto;
   padding-left: rem(10.68);
   padding-right: rem(9.68);
+  position: relative;
+  z-index: 1;
   @include mq('md') {
     max-width: rem(890.640);
     width: 100%;
@@ -261,4 +229,164 @@
 
 .about__swiper .swiper-wrapper{
   transition-timing-function: linear;
+}
+
+
+.about__bg-pawpads {
+  content: "";
+  position: absolute;
+  top: rem(-8);
+  right: calc(50% - min(50vw, 32rem));
+  width: rem(54);
+  height: rem(120);
+  background-image: url(../images/common/about_bg_pawpads.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include mq('md') {
+    background-image: url(../images/common/about_bg_pawpads-pc.png);
+    right: calc(50% - min(50vw, 36rem));
+    width: rem(100);
+    height: rem(220);
+  }
+}
+
+.about__bg-goods1 {
+  content: "";
+  position: absolute;
+  bottom: rem(168);
+  right: calc(50% - min(34vw, 32rem));
+  width: rem(133);
+  height: rem(65);
+  background-image: url(../images/common/about_goods1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include mq('md') {
+    background-image: url(../images/common/about_bg_goods1.png);
+    bottom: rem(352);
+    right: calc(50% - min(48vw, 43rem));
+    width: rem(308);
+    height: rem(151);
+  }
+}
+
+.about__bg-goods2 {
+  content: "";
+  position: absolute;
+  bottom: rem(224);
+  right: calc(50% - min(44vw, 32rem));
+  width: rem(48);
+  height: rem(48);
+  background-image: url(../images/common/about_bg_goods2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include mq('md') {
+    background-image: url(../images/common/about_bg_goods2.png);
+    bottom: rem(556);
+    right: calc(50% - min(48vw, 38rem));
+    width: rem(101);
+    height: rem(100);
+  }
+}
+
+.about__bg-wavyline1 {
+  @include mq('md') {
+    content: "";
+    position: absolute;
+    top: rem(608);
+    right: calc(42% - min(42vw, 42rem));
+    width: rem(807);
+    height: rem(15);
+    background-image: url(../images/common/about_bg_wavyline.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.about__bg-wavyline2 {
+  @include mq('md') {
+    content: "";
+    position: absolute;
+    top: rem(640);
+    right: calc(42% - min(42vw, 42rem));
+    width: rem(807);
+    height: rem(15);
+    background-image: url(../images/common/about_bg_wavyline.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.about__bg-photo-left {
+  content: "";
+  position: absolute;
+  top: rem(408);
+  left: calc(13% - min(50vw, 32rem));
+  width: rem(200);
+  height: rem(200);
+  background-image: url(../images/common/about_bg_photo-left.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  @include mq('md') {
+    background-image: url(../images/common/about_bg_photo-left-pc.png);
+    top: rem(82);
+    left: calc(28% - min(50vw, 50rem));
+    width: rem(480);
+    height: rem(480);
+  }
+}
+
+.about__bg-photo-right {
+  content: "";
+  position: absolute;
+  top: rem(256);
+  right: calc(50% - min(50vw, 32rem));
+  width: rem(200);
+  height: rem(200);
+  background-image: url(../images/common/about_bg_photo-right.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow-x: hidden;
+  @include mq('md') {
+    background-image: url(../images/common/about_bg_photo-right-pc.png);
+    top: rem(82);
+    right: calc(50% - min(50vw, 50rem));
+    width: rem(480);
+    height: rem(480);
+  }
+}
+
+.about__bg-diagonal-line {
+  @include mq('md') {
+    content: "";
+    position: absolute;
+    top: rem(-8);
+    left: calc(49% - min(50vw, 48rem));
+    width: rem(250);
+    height: rem(250);
+    background-image: url(../images/common/about_diagonal-line.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+}
+
+.about__bg-sakamichi {
+  content: "";
+  position: absolute;
+  bottom: rem(-144);
+  left: calc(50% - min(50vw, 32rem));
+  width: rem(144);
+  height: rem(433);
+  background-image: url(../images/common/about_sakamichi.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 0;
+  @include mq('md') {
+    background-image: url(../images/common/about_sakamichi-pc.png);
+    bottom: rem(112);
+    left: calc(43% - min(50vw, 50rem));
+    width: rem(427);
+    height: rem(817);
+  }
 }

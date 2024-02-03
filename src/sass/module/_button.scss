@@ -32,4 +32,41 @@
 .button:disabled {
   background: var(--LP-Dark-Gray, $d-gray);
   transition: .3s;
+  box-shadow: none;
+}
+
+.button-small {
+  display: inline-block;
+  text-align: center;
+  padding: rem(4) rem(24) rem(6) rem(24);
+  border-radius: rem(40);
+  border: 2px solid var(--LP-Blown, $blown);
+  background: var(--LP-White, $white);
+  box-shadow: 0px 4px 0px 0px $blown;
+  color: var(--LP-Blown, $blown);
+  font-feature-settings: 'pref' on;
+  font-family: $base-font-family;
+  font-size: rem(14);
+  font-style: normal;
+  font-weight: $bold;
+  line-height: calc(22 / 14);
+  width: 100%;
+  white-space: nowrap;
+}
+
+.button-small.button-small--mv {
+  @include mq('md') {
+    font-size: rem(16);
+    line-height: calc(25.6 / 16);
+  }
+}
+
+.button-small:hover {
+  background: var(--LP-Yellow, $accent-yellow);
+  transition: .3s;
+}
+
+.button-small:disabled {
+  background: var(--LP-Dark-Gray, $d-gray);
+  transition: .3s;
 }

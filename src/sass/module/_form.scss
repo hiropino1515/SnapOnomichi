@@ -119,7 +119,11 @@ button,
 	cursor: pointer;
 	transition: 0.3s ease;
   border-radius: $border-r-btn;
-  line-height: 1;
+  line-height: calc(25.6 / 16);
+	&:hover {
+		background: var(--LP-Yellow, $accent-yellow);
+		transition: .3s;
+	}
 }
 
 [type="radio"] {

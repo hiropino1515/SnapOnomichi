@@ -9,8 +9,8 @@
 
 .entry__container {
   padding: rem(24) rem(23.5);
-  background-color: $white;
-  @include mq('md') {
+  border: 8px solid var(--LP-White, $white);
+  background: rgba(255, 255, 255, 0.50);  @include mq('md') {
     padding: rem(40) rem(56);
   }
 }
@@ -105,8 +105,13 @@
   text-decoration-line: underline;
 }
 
-.entry__item-text li a {
+.entry__item-text a {
   text-decoration-line: underline;
+  &:hover {
+    transition: all 0.3s;
+    color: $main;
+    cursor: pointer;
+  }
 }
 
 .entry__bg {
