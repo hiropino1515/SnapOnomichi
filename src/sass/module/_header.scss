@@ -28,9 +28,14 @@
   position: relative;
   width: rem(210);
   z-index: 500;
+  transition: all 0.3s;
   @include mq('md') {
     width: rem(183);
   }
+}
+
+.header__logo:hover {
+  opacity: 0.7;
 }
 
 .header__drawer {

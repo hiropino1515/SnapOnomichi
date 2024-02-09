@@ -39,16 +39,15 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     // about__swiper
     const swiper = new Swiper('.about__swiper', {
       loop: true,
+      slidesPerView: "auto",
       autoplay: {
           delay: 0,
       },
       speed: 3000,
-      slidesPerView: 3.5,
 
       spaceBetween: 10,
       breakpoints: {
         768: {
-          slidesPerView: 7,
           spaceBetween: 20,
         },
       },
@@ -116,14 +115,14 @@ $(document).ready(function(){
     // エラーメッセージをクリアする
     $(".error-message").remove();
     // エラースタイルを削除する
-    $("input, select, textarea").removeClass("error");
+    $("input, select, textarea").removeClass("is-error"); // .is-errorクラスを削除する
     
     // 必須フィールドをチェックする
     $("input[required], select[required], textarea[required]").each(function(){
       if ($(this).val() === '') {
         event.preventDefault(); // フォーム送信を中止する
         $(this).after('<div class="error-message">このフィールドは必須です。</div>');
-        $(this).addClass("error"); // エラースタイルを追加する
+        $(this).addClass("is-error"); // .is-errorクラスを追加する
       }
     });
     
@@ -131,8 +130,10 @@ $(document).ready(function(){
     if (!$("input[name='privacy']").is(':checked')) {
       event.preventDefault(); // フォーム送信を中止する
       $(".form__checkbox").append('<div class="error-message">※プライバシーポリシーに同意する必要があります。</div>');
+      $("input[name='privacy']").addClass("is-error"); // .is-errorクラスを追加する
     }
   });
 });
+
 
 });

@@ -3,6 +3,13 @@
 .about {
   position: relative;
   overflow: hidden;
+
+  .swiper-slide {
+    width: rem(100);
+    @include mq('md') {
+      width: rem(200);
+    }
+  }
 }
 
 .about__inner {

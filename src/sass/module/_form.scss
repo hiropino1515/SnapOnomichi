@@ -94,6 +94,13 @@ textarea {
     }
   }
 }
+[type="text"].is-error,
+[type="email"].is-error,
+textarea.is-error {
+	border: 1px solid var(--LP-Red, $accent-red);
+  background: var(--LP-Lpink, #FFF0F7);
+}
+
 [type="tel"] {
   max-width: rem(200);
   width: 100%;
@@ -248,15 +255,18 @@ select {
   margin-top: rem(8);
 	font-size: $fz;
 	padding: $padding-und $padding-lnr;
-  // border: 1px solid $border-cr-default;
+  border: 1px solid transparent;
   border-radius: $border-r;
 	// background-color: $check-bg-cr;
 	/*↓デフォルトのアイコンを消す場合はコメントアウト（noneにする）*/
 	// appearance: auto;
 	/*↓デフォルトではないアイコンを使う場合は入力する*/
-	background:
-  url(../images/common/contact_form-select_icon.svg) right 11.5px center no-repeat,
-  linear-gradient(to right, $gray 0%, $gray calc(100% - 52px), $main calc(100% - 52px), $main 100%);
+	background-image:
+  url(../images/common/contact_form-select_icon.svg),
+  linear-gradient(to left, $main 52px, $gray 52px);
+	background-repeat: no-repeat, no-repeat;
+	background-size: 32px 32px, cover;
+	background-position: center right 11.5px, center center;
 
 	&:focus {
 		border: 1px solid $main;
@@ -267,9 +277,9 @@ select {
 	}
 }
 
-select.error {
+select.is-error {
 	border: 1px solid var(--LP-Red, $accent-red);
-	/* エラー時のその他のスタイルを追加 */
+  background: var(--LP-Lpink, #FFF0F7);
 }
 
 textarea {
