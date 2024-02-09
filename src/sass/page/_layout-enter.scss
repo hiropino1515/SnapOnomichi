@@ -1,8 +1,8 @@
 @use 'global' as *;
 
 .layout-enter {
-  margin-top: rem(64.8);
+  padding-top: rem(64.8);
   @include mq('md') {
-    margin-top: rem(120);
+    padding-top: rem(120);
   }
 }

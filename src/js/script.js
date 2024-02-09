@@ -5,11 +5,11 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     if ($(".js-hamburger").hasClass("is-active")) {
       $(".js-hamburger").removeClass('is-active');
       $("body").removeClass('is-active');
-      $(".js-sp-nav").fadeOut(300);
+      $(".js-sp-nav").slideUp(400); // 上から降りてくるアニメーション
     } else {
       $(".js-hamburger").addClass('is-active');
       $("body").addClass('is-active');
-      $(".js-sp-nav").fadeIn(300);
+      $(".js-sp-nav").slideDown(400); // 上から降りてくるアニメーション
     }
   });
 
@@ -18,7 +18,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     const pageTop = $("#to-top");
     pageTop.hide();
     $(window).scroll(function () {
-      if ($(this).scrollTop() > 100) {
+      if ($(this).scrollTop() > 300) {
         pageTop.fadeIn();
       } else {
         pageTop.fadeOut();
@@ -34,25 +34,27 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       return false;
     });
 
+
+
     // about__swiper
     const swiper = new Swiper('.about__swiper', {
       loop: true,
-      loopedSlides: 10,
       autoplay: {
           delay: 0,
       },
       speed: 3000,
-      width: 100,
+      slidesPerView: 3.5,
 
       spaceBetween: 10,
       breakpoints: {
         768: {
-          width: 200,
+          slidesPerView: 7,
           spaceBetween: 20,
         },
       },
     })
   });
+
 
   var swiper = new Swiper(".recommended-spots__swiper", {
     loop: true,
@@ -91,5 +93,46 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       $(this).toggleClass("open",300);
     });
   });
+
+  // モーダルウィンドウ
+  $(function () {
+    $(".js-modal-open").on("click", function () {
+        var modalId = $(this).data("id"); // クリックされた要素からdata-id属性の値を取得
+        $("#" + modalId).fadeIn(); // 対応するモーダルを表示
+        $('html, body').css('overflow', 'hidden');
+        return false; // デフォルトのリンクの動作をキャンセル
+    });
+    
+    $(".js-modal-close").on("click", function () {
+        $(".modal").fadeOut(); // すべてのモーダルを非表示
+        $('html, body').removeAttr('style');
+        return false; // デフォルトのリンクの動作をキャンセル
+    });
+});
+
+// お問い合わせフォームエラーメッセージ
+$(document).ready(function(){
+  $("form").submit(function(event) {
+    // エラーメッセージをクリアする
+    $(".error-message").remove();
+    // エラースタイルを削除する
+    $("input, select, textarea").removeClass("error");
+    
+    // 必須フィールドをチェックする
+    $("input[required], select[required], textarea[required]").each(function(){
+      if ($(this).val() === '') {
+        event.preventDefault(); // フォーム送信を中止する
+        $(this).after('<div class="error-message">このフィールドは必須です。</div>');
+        $(this).addClass("error"); // エラースタイルを追加する
+      }
+    });
+    
+    // プライバシーチェックボックスをチェックする
+    if (!$("input[name='privacy']").is(':checked')) {
+      event.preventDefault(); // フォーム送信を中止する
+      $(".form__checkbox").append('<div class="error-message">※プライバシーポリシーに同意する必要があります。</div>');
+    }
+  });
+});
 
 });

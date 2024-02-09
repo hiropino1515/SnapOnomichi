@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.to-top {
+  transition: all 0.3s;
+  @include mq('md') {
+    position: fixed;
+    right: rem(40);
+    bottom: rem(40);
+    overflow: hidden;
+    z-index: 100;
+  }
+}
+
+.to-top:hover {
+  opacity: 0.8;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.to-top a {
+  display: inline-block;
+}
+
+.to-top img {
+  width: rem(75);
+  height: rem(78);
+  object-fit: cover;
+  @include mq('md') {
+    width: rem(100);
+    height: rem(104);
+  }
+}

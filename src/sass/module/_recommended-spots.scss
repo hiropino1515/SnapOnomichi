@@ -30,6 +30,10 @@
     background-image: url(../images/common/swiper-arrow-left.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    transition: left 0.3s ease;
+  }
+  .swiper-button-prev:hover::after {
+    left: calc(50% - 8px); /* ホバー時の位置を設定 */
   }
   
   .swiper-button-next {
@@ -40,7 +44,7 @@
       width: rem(80);
       height: rem(80);
       top: 94.6%;
-      right: 19%;
+      right: 0;
       background-image: url(../images/common/swiper-button-bg.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -58,8 +62,12 @@
     background-image: url(../images/common/swiper-arrow-right.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    transition: left 0.3s ease;
   }
-  
+  .swiper-button-next:hover::after {
+    left: calc(50% + 8px); /* ホバー時の位置を設定 */
+  }
+
 }
 
 .recommended-spots__inner {

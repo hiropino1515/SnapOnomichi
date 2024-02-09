@@ -210,30 +210,6 @@ body {
   text-align: center;
   @include mq('md') {
     margin: 0;
-    position: fixed;
-    right: rem(40);
-    bottom: rem(160);
-    overflow: hidden;
-    z-index: 100;
-  }
-}
-
-.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.footer__to-top a {
-  display: inline-block;
-}
-
-.footer__to-top img {
-  width: rem(75);
-  height: rem(78);
-  object-fit: cover;
-  @include mq('md') {
-    width: rem(100);
-    height: rem(104);
   }
 }
 

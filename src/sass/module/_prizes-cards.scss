@@ -1,14 +1,13 @@
 @use "global" as *;
 
 .prizes-cards {
-  display: grid;
-  column-gap: rem(15);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   row-gap: rem(15);
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
+  column-gap: rem(15);
   @include mq('md') {
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: rem(32);
     row-gap: rem(40);
+    column-gap: rem(32);
   }
 }

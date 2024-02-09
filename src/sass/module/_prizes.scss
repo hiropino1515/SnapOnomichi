@@ -6,16 +6,70 @@
 
 .prizes__inner.inner {
   padding-bottom: rem(34);
-  background-color: $white;
   max-width: rem(1024);
   border-radius: rem(24);
+  position: relative;
   @include mq('md') {
     padding-bottom: rem(53);
   }
 }
 
-.prizes__title {
+.prizes__inner.inner::before {
+  content: "";
+  position: absolute;
+  background-color: $white;
+  border-radius: rem(24);
+  top: rem(67);
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 93.5%;
+  z-index: -1;
+  @include mq('md') {
+    top: rem(94);
+  }
+}
 
+
+.prizes__title {
+  position: relative;
+}
+
+.prizes__title-bg {
+  content: "あ";
+  position: absolute;
+  top: 26%;
+  left: 50.5%;
+  transform: translate(-50%, -50%);
+  width: rem(238);
+  height: rem(83);
+  background-image: url(../images/common/prizes_title_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+  @include mq('md') {
+    background-image: url(../images/common/prizes_title_bg.png);
+    width: rem(378);
+    height: rem(150);
+    top: 30%;
+    left: 51%;
+  }
+}
+
+.prizes__title-triangle {
+  @include mq('md') {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/common/prizes_bg_triangle.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
 }
 
 .prizes__lead {

@@ -342,6 +342,8 @@
     <section class="prizes layout-prizes">
       <div class="prizes__inner inner">
         <div class="prizes__title section-title">
+          <div class="prizes__title-bg"></div>
+          <div class="prizes__title-triangle"></div>
           <div class="section-title__icon">
             <img src="./assets/images/common/prizes-title_icon.svg" alt="">
           </div>
@@ -350,71 +352,134 @@
         </div>
         <p class="prizes__lead">キャンペーンにご参加いただたい方の中から100名様に、尾道で人気のお土産セットやオリジナルグッズをプレゼント！</p>
         <ul class="prizes__list prizes-cards">
-          <li>
-            <a href="" class="prizes__item prizes-card">
+          <li class="prizes__item prizes-card">
+            <div class="prizes-card__container js-modal-open" data-id="modal1">
               <div class="prizes-card__icon">
                 <p class="prizes-card__benefits">特典</p>
                 <p class="prizes-card__number">1</p>
               </div>
-              <div class="prizes-card__container">
-                <div class="prizes-card__image"><img src="./assets/images/common/prizes-card_img1.jpg" alt=""></div>
-                <div class="prizes-card__body"><p>海街洋菓子店<br>
-                  スイーツセット</p><span></span></div>
-              </div>
-            </a>
+              <div class="prizes-card__image"><img src="./assets/images/common/prizes-card_img1.jpg" alt=""></div>
+              <div class="prizes-card__body"><p>海街洋菓子店<br>
+                スイーツセット</p><a class="prizes-card__zoom-icon js-modal-open"><img src="./assets/images/common/prizes-card_zoom-icon.png" alt=""></a></div>
+            </div>
           </li>
-          <li>
-            <a href="" class="prizes__item prizes-card">
+          <li class="prizes__item prizes-card">
+            <div class="prizes-card__container js-modal-open" data-id="modal2">
               <div class="prizes-card__icon">
                 <p class="prizes-card__benefits">特典</p>
                 <p class="prizes-card__number">2</p>
               </div>
-              <div class="prizes-card__container">
-                <div class="prizes-card__image"><img src="./assets/images/common/prizes-card_img2.jpg" alt=""></div>
-                <div class="prizes-card__body"><p>ねこねこ<br>
-                  グッズセット </p></div>
-              </div>
-            </a>
+              <div class="prizes-card__image"><img src="./assets/images/common/prizes-card_img2.jpg" alt=""></div>
+              <div class="prizes-card__body"><p>ねこねこ<br>
+                グッズセット </p><a class="prizes-card__zoom-icon js-modal-open"><img src="./assets/images/common/prizes-card_zoom-icon.png" alt=""></a></div>
+            </div>
           </li>
-          <li>
-            <a href="" class="prizes__item prizes-card">
+          <li class="prizes__item prizes-card">
+            <div class="prizes-card__container js-modal-open" data-id="modal3">
               <div class="prizes-card__icon">
                 <p class="prizes-card__benefits">特典</p>
                 <p class="prizes-card__number">3</p>
               </div>
-              <div class="prizes-card__container">
-                <div class="prizes-card__image"><img src="./assets/images/common/prizes-card_img3.jpg" alt=""></div>
-                <div class="prizes-card__body"><p>尾道ラーメンセット</p></div>
-              </div>
-            </a>
+              <div class="prizes-card__image"><img src="./assets/images/common/prizes-card_img3.jpg" alt=""></div>
+              <div class="prizes-card__body"><p>尾道ラーメンセット</p><a class="prizes-card__zoom-icon js-modal-open"><img src="./assets/images/common/prizes-card_zoom-icon.png" alt=""></a></div>
+            </div>
           </li>
-          <li>
-            <a href="" class="prizes__item prizes-card">
+          <li class="prizes__item prizes-card">
+            <div class="prizes-card__container js-modal-open" data-id="modal4">
               <div class="prizes-card__icon">
                 <p class="prizes-card__benefits">特典</p>
                 <p class="prizes-card__number">4</p>
               </div>
-              <div class="prizes-card__container">
-                <div class="prizes-card__image"><img src="./assets/images/common/prizes-card_img4.jpg" alt=""></div>
-                <div class="prizes-card__body"><p>工房尾道帆布<br>
-                  オリジナルトート</p></div>
-              </div>
-            </a>
+              <div class="prizes-card__image"><img src="./assets/images/common/prizes-card_img4.jpg" alt=""></div>
+              <div class="prizes-card__body"><p>工房尾道帆布<br>
+                オリジナルトート</p><a class="prizes-card__zoom-icon js-modal-open"><img src="./assets/images/common/prizes-card_zoom-icon.png" alt=""></a></div>
+            </div>
           </li>
-          <li>
-            <a href="" class="prizes__item prizes-card">
+          <li class="prizes__item prizes-card">
+            <div class="prizes-card__container js-modal-open" data-id="modal5">
               <div class="prizes-card__icon">
                 <p class="prizes-card__benefits">特典</p>
                 <p class="prizes-card__number">5</p>
               </div>
-              <div class="prizes-card__container">
-                <div class="prizes-card__image"><img src="./assets/images/common/prizes-card_img5.jpg" alt=""></div>
-                <div class="prizes-card__body"><p>海街洋菓子店<br>
-                  スイーツセット</p></div>
-              </div>
-            </a>
+              <div class="prizes-card__image"><img src="./assets/images/common/prizes-card_img5.jpg" alt=""></div>
+              <div class="prizes-card__body"><p>海街洋菓子店<br>
+                スイーツセット</p><a class="prizes-card__zoom-icon js-modal-open"><img src="./assets/images/common/prizes-card_zoom-icon.png" alt=""></a></div>
+            </div>
           </li>
         </ul>
+        <div id="modal1" class="modal js-modal">
+          <div class="modal__overlay"></div>
+          <div class="modal__content">
+            <img src="./assets/images/common/prizes-card_img1.jpg" alt="">
+            <div class="modal__body">
+              <p class="modal__title">海街洋菓子店 スイーツセット</p>
+              <p class="modal__text">海沿いにあるケーキ屋さん、<br>
+                海街洋菓子店の人気焼き菓子詰め合わせセット。<br>
+                こだわりのバターをふんだんに使ったリッチな味わいで、濃厚なコクが後を引く美味しさです。</p>
+              <div class="modal__button"><a class="button-small" href="">閉じる</a></div>
+            </div>
+          </div>
+        </div>
+        <div id="modal2" class="modal js-modal">
+          <div class="modal__overlay"></div>
+          <div class="modal__content">
+            <img src="./assets/images/common/prizes-card_img2.jpg" alt="">
+            <div class="modal__body">
+              <p class="modal__title">ねこねこグッズセット</p>
+              <p class="modal__text">お土産としても大人気の猫グッズを集めました。<br>
+                お家で、オフィスで、<br>
+                眺めているだけでも癒されてしまう<br>
+                愛らしい猫たちと一緒に。</p>
+              <div class="modal__button"><a class="button-small" href="">閉じる</a></div>
+            </div>
+          </div>
+        </div>
+        <div id="modal3" class="modal js-modal">
+          <div class="modal__overlay"></div>
+          <div class="modal__content">
+            <img src="./assets/images/common/prizes-card_img3.jpg" alt="">
+            <div class="modal__body">
+              <p class="modal__title">尾道ラーメンセット</p>
+              <p class="modal__text">全国にファンがいる本格的な尾道ラーメンをお家で。<br>
+                尾道ラーメンといえば、透き通った醤油スープと、<br>
+                平打ち麺が特徴です。<br>
+                コクがありながらまろやかな味のスープは<br>
+                思わず飲み干したくなるお味。</p>
+              <div class="modal__button"><a class="button-small" href="">閉じる</a></div>
+            </div>
+          </div>
+        </div>
+        <div id="modal4" class="modal js-modal">
+          <div class="modal__overlay"></div>
+          <div class="modal__content">
+            <img src="./assets/images/common/prizes-card_img4.jpg" alt="">
+            <div class="modal__body">
+              <p class="modal__title">おうちで喫茶店セット</p>
+              <p class="modal__text">尾道の人気喫茶店のコーヒー豆を使用したドリップバッグとマグカップのセット。<br>
+                香り高い深煎りの豆は、カフェオレにするのも◎<br>
+                カンタンに楽しめるドリップバッグは、<br>
+                オフィスや在宅ワーク時、忙しい家事の合間など<br>
+                日常のさまざまなシーンで大活躍。</p>
+              <div class="modal__button"><a class="button-small" href="">閉じる</a></div>
+            </div>
+          </div>
+        </div>
+        <div id="modal5" class="modal js-modal">
+          <div class="modal__overlay"></div>
+          <div class="modal__content">
+            <img src="./assets/images/common/prizes-card_img5.jpg" alt="">
+            <div class="modal__body">
+              <p class="modal__title">工房尾道帆布オリジナルトート</p>
+              <p class="modal__text">工房尾道帆布とコラボした、<br>
+                本キャンペーンオリジナルトート。<br>
+                シンプルなデザインで、シーンを選ばず<br>
+                お使いいただけます。<br>
+                しっかりした生地で、<br>
+                年月とともに変化していく風合いも魅力。</p>
+              <div class="modal__button"><a class="button-small" href="">閉じる</a></div>
+            </div>
+          </div>
+        </div>
         <div class="prizes__button">
           <a href="#" class="button">#見つけて尾道レトロ の最新投稿を見る</a>
         </div>
@@ -604,13 +669,13 @@
         <p class="contact__lead">本キャンペーンに関するお問い合わせは<br class="u-mobile">
           以下のフォームからお願いします。</p>
         <div class="contact__form form">
-          <form action="" method="post" id="">
+          <form action="" method="post" id="myForm">
             <dl class="form__item">
               <dt>
                 お名前<span>必須</span>
               </dt>
               <dd>
-                <input type="text" name="company" placeholder="山田太郎" value=""  required/>
+                <input type="text" name="name" placeholder="山田太郎" value=""  required/>
               </dd>
             </dl>
             <dl class="form__item">
@@ -626,10 +691,11 @@
                 お問い合わせ内容<span>必須</span>
               </dt>
               <dd class="">
-                <select name="hoge" class="" required>
+                <select name="select" class="" required>
                   <option value="">選択してください</option>
-                  <option value="セレクト1">セレクト1</option>
-                  <option value="セレクト2">セレクト2</option>
+                  <option value="セレクト1">選択項目1</option>
+                  <option value="セレクト2">選択項目2</option>
+                  <option value="セレクト2">選択項目3</option>
                 </select>
               </dd>
             </dl>
@@ -649,10 +715,10 @@
               </dd>
             </dl>
             <div class="form__checkbox">
-              <label><input type="checkbox" name="hoge" value="チェックボックス1" checked/><span><a href="#">プライバシーポリシー</a>に合意する</span></label>
+              <label><input type="checkbox" name="privacy" value="チェックボックス1"/><span><a href="#">プライバシーポリシー</a>に合意する</span></label>
             </div>
             <div class="form__button">
-              <input type="button" class="" value="上記の内容を送信する" />
+              <input type="submit" value="上記の内容を送信する" />
             </div>
           </form>
         </div>
@@ -695,7 +761,7 @@
           </div>
         </div>
       </div>
-      <div id="to-top" class="footer__to-top">
+      <div id="to-top" class="footer__to-top to-top">
         <a href="#"><img src="./assets/images/common/pagetop.png" alt="ページトップへ戻るボタン"></a>
       </div>
     </div>

@@ -65,7 +65,7 @@ textarea {
 	padding: $padding-und $padding-lnr;
 	width: 100%;
 	background: $gray;
-	// border: 1px solid $border-cr-default;
+	border: 1px solid transparent;
 	border-radius: $border-r;
 	/*↓↓↓↓不要ならコメントアウト or 削除 */
 	// &:hover {  //ホバーしたときの色
@@ -75,6 +75,7 @@ textarea {
 	@include mq('md') {
 		margin-top: 0;
 	}
+
 	&:focus {
 		border: 1px solid $main;
 		background: var(--LP-Light-Blue, $sub-blue-l);
@@ -145,7 +146,7 @@ button,
 			left: 0;
 			transform: translateY(-50%);
 			background: $gray;
-			// border: 1px solid $radio-border-cr;
+			border: 1px solid transparent;
 			border-radius: 50%;
 			width: $radio-size;
 			height: $radio-size;
@@ -202,7 +203,7 @@ button,
 			transform: translateY(-50%);
 			background: $check-bg-cr;
 			border-radius: 4px;
-			// border: 1px solid $check-border-cr;
+			border: 1px solid transparent;
 			width: $check-size;
 			height: $check-size;
 			display: block;
@@ -249,18 +250,26 @@ select {
 	padding: $padding-und $padding-lnr;
   // border: 1px solid $border-cr-default;
   border-radius: $border-r;
+	// background-color: $check-bg-cr;
 	/*↓デフォルトのアイコンを消す場合はコメントアウト（noneにする）*/
 	// appearance: auto;
 	/*↓デフォルトではないアイコンを使う場合は入力する*/
-	background: 
+	background:
   url(../images/common/contact_form-select_icon.svg) right 11.5px center no-repeat,
   linear-gradient(to right, $gray 0%, $gray calc(100% - 52px), $main calc(100% - 52px), $main 100%);
+
+	&:focus {
+		border: 1px solid $main;
+	}
+
 	@include mq('md') {
 		margin-top: 0;
 	}
-	&:focus {
-		border: none;
-	}
+}
+
+select.error {
+	border: 1px solid var(--LP-Red, $accent-red);
+	/* エラー時のその他のスタイルを追加 */
 }
 
 textarea {
@@ -272,6 +281,7 @@ textarea {
 		background: var(--LP-Light-Blue, $sub-blue-l);
 	}
 }
+
 
 .form {
 
@@ -352,4 +362,13 @@ textarea {
   @include mq('md') {
     margin-top: rem(40);
   }
+}
+
+.error-message {
+	color: $accent-red;
+}
+
+.error {
+  border: 1px solid var(--LP-Red, $accent-red);
+  background: var(--LP-Lpink, #FFF0F7);
 }
