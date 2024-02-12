@@ -21,6 +21,7 @@
   min-width: rem(240);
   height: auto;
   @include mq('md') {
+    border-radius:  rem(24) rem(24) 0 0;
     aspect-ratio: 344 / 240;
     max-width: rem(344);
   }
@@ -33,6 +34,10 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  @include mq('md') {
+    padding: rem(24) rem(32) rem(40);
+    border-radius:0 0 rem(24) rem(24);
+  }
 }
 
 .spots-card__title {

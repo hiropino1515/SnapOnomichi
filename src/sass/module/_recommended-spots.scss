@@ -3,6 +3,7 @@
 .recommended-spots {
   background-color: $sub-blue-d;
   padding-bottom: rem(19.84);
+  position: relative;
 
   .swiper-button-prev {
     display: none;
@@ -44,7 +45,7 @@
       width: rem(80);
       height: rem(80);
       top: 94.6%;
-      right: 0;
+      right: rem(40);
       background-image: url(../images/common/swiper-button-bg.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -67,10 +68,21 @@
   .swiper-button-next:hover::after {
     left: calc(50% + 8px); /* ホバー時の位置を設定 */
   }
-
 }
 
-.recommended-spots__inner {
+.recommended-spots__bg-pawpads {
+  @include mq('md') {
+    content: "";
+    position: absolute;
+    bottom: rem(16);
+    left: calc(40% - min(44vw, 35rem));
+    width: rem(100);
+    height: rem(220);
+    background-image: url(../images/common/spots_bg_pawpads.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 1;
+  }
 
 }
 
@@ -119,6 +131,9 @@
     margin-top: rem(8);
     font-size: rem(40);
     line-height: calc(50 / 40);
+    letter-spacing: 0.25em;
+    text-indent: rem(20);
+    width: 100%;
   }
 }
 
@@ -158,10 +173,6 @@
   }
 }
 
-.recommended-spots__body {
-
-}
-
 .recommended-spots__text {
   margin-top: rem(16);
   color: var(--LP-White, $white);
@@ -180,6 +191,9 @@
 
 .recommended-spots__button {
   margin-top: rem(24);
+  @include mq('md') {
+    padding-left: rem(8);
+  }
 }
 
 .recommended-spots__bg {

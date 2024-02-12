@@ -2,7 +2,6 @@
 
 .about {
   position: relative;
-  overflow: hidden;
 
   .swiper-slide {
     width: rem(100);
@@ -17,9 +16,11 @@
 }
 
 .about__wrapper {
+  margin-inline: auto;
   padding: rem(40) rem(12);
   background-color: $white;
   border-radius: rem(24);
+  max-width: rem(600);
   width: 100%;
   position: relative;
   z-index: 1;
@@ -28,7 +29,6 @@
   justify-content: center;
   @include mq('md') {
     max-width: rem(848);
-    margin-inline: auto;
   }
 }
 
@@ -94,7 +94,7 @@
   font-weight: $bold;
   line-height: calc(22.4 / 14);
   @include mq('md') {
-    margin-top: rem(32);
+    margin-top: rem(38);
     font-size: rem(16);
     line-height: calc(25.6 / 16);
     white-space: nowrap;
@@ -169,16 +169,16 @@
   margin-top: rem(24);
   margin-left: auto;
   margin-right: auto;
-  padding: rem(8) 0 ;
   width: rem(249);
   @include mq('md') {
-    margin-top: rem(32);
+    margin-top: rem(50);
     width: rem(356);
   }
 }
 
 .about__present p {
   display: inline-block;
+  padding-bottom: rem(8);
   border-bottom: 2px dashed var(--LP-Blue, $main);
   color: var(--LP-Blown, #4A3636);
   text-align: center;
@@ -221,7 +221,8 @@
   position: relative;
   z-index: 1;
   @include mq('md') {
-    max-width: rem(890.640);
+    margin-top: rem(112);
+    max-width: rem(906.640);
     width: 100%;
   }
 }
@@ -252,16 +253,18 @@
   background-size: contain;
   @include mq('md') {
     background-image: url(../images/common/about_bg_pawpads-pc.png);
-    right: calc(50% - min(50vw, 36rem));
+    right: calc(50% - min(48vw, 37rem));
     width: rem(100);
     height: rem(220);
+    top: rem(-80);
+    z-index: 0;
   }
 }
 
 .about__bg-goods1 {
   content: "";
   position: absolute;
-  bottom: rem(168);
+  bottom: rem(160);
   right: calc(50% - min(34vw, 32rem));
   width: rem(133);
   height: rem(65);
@@ -270,7 +273,7 @@
   background-size: contain;
   @include mq('md') {
     background-image: url(../images/common/about_bg_goods1.png);
-    bottom: rem(352);
+    bottom: rem(382);
     right: calc(50% - min(48vw, 43rem));
     width: rem(308);
     height: rem(151);
@@ -280,7 +283,7 @@
 .about__bg-goods2 {
   content: "";
   position: absolute;
-  bottom: rem(224);
+  bottom: rem(218);
   right: calc(50% - min(44vw, 32rem));
   width: rem(48);
   height: rem(48);
@@ -289,10 +292,11 @@
   background-size: contain;
   @include mq('md') {
     background-image: url(../images/common/about_bg_goods2.png);
-    bottom: rem(556);
+    bottom: rem(590);
     right: calc(50% - min(48vw, 38rem));
     width: rem(101);
     height: rem(100);
+    z-index: 0;
   }
 }
 
@@ -301,12 +305,13 @@
     content: "";
     position: absolute;
     top: rem(608);
-    right: calc(42% - min(42vw, 42rem));
+    right: calc(5% - min(42vw, 42rem));
     width: rem(807);
     height: rem(15);
     background-image: url(../images/common/about_bg_wavyline.png);
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: -1;
   }
 }
 
@@ -315,29 +320,30 @@
     content: "";
     position: absolute;
     top: rem(640);
-    right: calc(42% - min(42vw, 42rem));
+    right: calc(9% - min(42vw, 42rem));
     width: rem(807);
     height: rem(15);
     background-image: url(../images/common/about_bg_wavyline.png);
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: -1;
   }
 }
 
 .about__bg-photo-left {
   content: "";
   position: absolute;
-  top: rem(408);
-  left: calc(13% - min(50vw, 32rem));
+  top: rem(394);
+  left: calc(57% - min(62vw, 32rem));
   width: rem(200);
   height: rem(200);
   background-image: url(../images/common/about_bg_photo-left.png);
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 1;
+  z-index: 0;
   @include mq('md') {
     background-image: url(../images/common/about_bg_photo-left-pc.png);
-    top: rem(82);
+    top: rem(72);
     left: calc(28% - min(50vw, 50rem));
     width: rem(480);
     height: rem(480);
@@ -347,8 +353,8 @@
 .about__bg-photo-right {
   content: "";
   position: absolute;
-  top: rem(256);
-  right: calc(50% - min(50vw, 32rem));
+  top: rem(272);
+  right: calc(57% - min(62vw, 32rem));
   width: rem(200);
   height: rem(200);
   background-image: url(../images/common/about_bg_photo-right.png);
@@ -357,8 +363,8 @@
   overflow-x: hidden;
   @include mq('md') {
     background-image: url(../images/common/about_bg_photo-right-pc.png);
-    top: rem(82);
-    right: calc(50% - min(50vw, 50rem));
+    top: rem(72);
+    right: calc(31% - min(50vw, 50rem));
     width: rem(480);
     height: rem(480);
   }
@@ -368,7 +374,7 @@
   @include mq('md') {
     content: "";
     position: absolute;
-    top: rem(-8);
+    top: rem(-20);
     left: calc(49% - min(50vw, 48rem));
     width: rem(250);
     height: rem(250);
@@ -382,17 +388,17 @@
 .about__bg-sakamichi {
   content: "";
   position: absolute;
-  bottom: rem(-144);
+  bottom: rem(-156);
   left: calc(50% - min(50vw, 32rem));
   width: rem(144);
   height: rem(433);
   background-image: url(../images/common/about_sakamichi.png);
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: 0;
+  z-index: -1;
   @include mq('md') {
     background-image: url(../images/common/about_sakamichi-pc.png);
-    bottom: rem(112);
+    bottom: rem(142);
     left: calc(43% - min(50vw, 50rem));
     width: rem(427);
     height: rem(817);

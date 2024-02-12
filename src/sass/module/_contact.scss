@@ -22,7 +22,7 @@
   font-weight: $regular;
   line-height: calc(19.2 / 12);
   @include mq('md') {
-    margin-top: rem(32);
+    margin-top: rem(38);
     font-size: rem(16);
     line-height: calc(25.6 / 19.2);
   }

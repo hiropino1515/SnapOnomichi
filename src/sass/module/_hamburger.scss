@@ -10,13 +10,26 @@
 .hamburger span {
   position: absolute;
   width: inherit;
-  height: rem(2);
+  height: rem(3);
   background-color: $blown;
+  border-radius: rem(6);
   transition: .3s;
 }
 
 .hamburger span:nth-child(1) {
 top: 15%;
+width: rem(25.6);
+}
+
+.hamburger span:nth-child(1) .hamburger__dot {
+  position: absolute;
+  top: 15%;
+  right: rem(-7);
+  width: rem(4.8);
+  height: rem(3);
+  background-color: $blown;
+  border-radius: rem(6);
+  transition: .3s;
 }
 
 .hamburger span:nth-child(2) {
@@ -31,6 +44,11 @@ top: 85%;
 .hamburger.is-active span:nth-child(1) {
 top: 50%;
 transform: rotate(45deg);
+width: rem(32);
+}
+
+.hamburger.is-active span:nth-child(1) .hamburger__dot {
+  display: none;
 }
 
 .hamburger.is-active span:nth-child(2) {

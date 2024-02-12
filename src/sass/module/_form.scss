@@ -44,7 +44,7 @@ $check-space-betweenRadio: rem(20);//ラジオボタンの間の距離
 $check-weight: 2px;//チェックマークの線の太さ(px)
 
 /*テキストエリアの指定*/
-$textarea-height: rem(255);
+$textarea-height: rem(160);
 
 [type="text"],
 [type="search"],
@@ -60,7 +60,7 @@ textarea {
 	background-image: none;
 	font-family: inherit;
 	/*↓カスタム */
-  margin-top: rem(8);
+  margin-top: rem(9);
 	font-size: $fz;
 	padding: $padding-und $padding-lnr;
 	width: 100%;
@@ -76,11 +76,6 @@ textarea {
 		margin-top: 0;
 	}
 
-	&:focus {
-		border: 1px solid $main;
-		background: var(--LP-Light-Blue, $sub-blue-l);
-	}
-
   ::placeholder {
     color: var(--LP-Dark-Gray, $d-gray);
     font-family: $base-font-family;
@@ -94,11 +89,45 @@ textarea {
     }
   }
 }
-[type="text"].is-error,
-[type="email"].is-error,
-textarea.is-error {
-	border: 1px solid var(--LP-Red, $accent-red);
+
+[type="text"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="url"]:focus,
+[type="email"]:focus,
+[type="password"]:focus,
+[type="date"]:focus {
+  border: 1px solid $main;
+	background: var(--LP-Light-Blue, $sub-blue-l);
+}
+
+[type="text"]:user-invalid,
+[type="search"]:user-invalid,
+[type="tel"]:user-invalid,
+[type="url"]:user-invalid,
+[type="email"]:user-invalid,
+[type="password"]:user-invalid,
+[type="date"]:user-invalid,
+[type="text"]:user-invalid:focus,
+[type="search"]:user-invalid:focus,
+[type="tel"]:user-invalid:focus,
+[type="url"]:user-invalid:focus,
+[type="email"]:user-invalid:focus,
+[type="password"]:user-invalid:focus,
+[type="date"]:user-invalid:focus {
+  border: 1px solid var(--LP-Red, $accent-red);
   background: var(--LP-Lpink, #FFF0F7);
+}
+
+[type="text"]:valid,
+[type="search"]:valid,
+[type="tel"]:valid,
+[type="url"]:valid,
+[type="email"]:valid,
+[type="password"]:valid,
+[type="date"]:valid {
+  border: 1px solid transparent;
+	background: $gray;
 }
 
 [type="tel"] {
@@ -111,7 +140,7 @@ button,
 	/*↓リセットCSS */
 	margin: 0;
 	background-image: none;
-	width: auto;
+	width: rem(204);
 	display: inline-block;
 	text-decoration: none;
 	border: none;
@@ -131,6 +160,10 @@ button,
 	&:hover {
 		background: var(--LP-Yellow, $accent-yellow);
 		transition: .3s;
+	}
+
+	@include mq('md') {
+		width: rem(240);
 	}
 }
 
@@ -193,7 +226,7 @@ button,
 		display: inline-block;
 		position: relative;
 		padding: 0 0 0 calc($check-size + $check-space);
-		margin: 0 $check-space-betweenRadio 0 0;
+		margin: 0 $check-space-betweenRadio 0 18px;
 		font-size: $check-fz;
 		line-height: 1;
 		cursor: pointer;
@@ -238,9 +271,18 @@ button,
 			margin-left: 0.1em;
 			border-left: $check-weight solid $check-bg-cr-inner;
 			border-bottom: $check-weight solid $check-bg-cr-inner;
-
 		}
 	}
+}
+
+[type="checkbox"]:user-invalid + span::before {
+	border: 1px solid var(--LP-Red, $accent-red);
+	background: var(--LP-Lpink, #FFF0F7);
+}
+
+[type="checkbox"]:focus + span::before {
+	border: 1px solid $main;
+	background: var(--LP-Light-Blue, $sub-blue-l);
 }
 
 select {
@@ -271,30 +313,46 @@ select {
 	&:focus {
 		border: 1px solid $main;
 	}
+	&:invalid {
+		color: var(--LP-Dark-Gray, $d-gray);
+		background-color: $gray;
+	}
 
 	@include mq('md') {
 		margin-top: 0;
 	}
 }
 
-select.is-error {
+select:user-invalid {
 	border: 1px solid var(--LP-Red, $accent-red);
-  background: var(--LP-Lpink, #FFF0F7);
+	background-image:
+  url(../images/common/contact_form-select_icon.svg),
+  linear-gradient(to left, $accent-red 52px, #FFF0F7 52px);
+}
+
+select:valid {
+	border: 1px solid transparent;
+	background-color: $gray;
 }
 
 textarea {
 	height: $textarea-height;
   width: 100%;
-
-	&:focus {
-		border: 1px solid $main;
-		background: var(--LP-Light-Blue, $sub-blue-l);
-	}
 }
 
+textarea:user-invalid {
+  border: 1px solid var(--LP-Red, $accent-red);
+  background: var(--LP-Lpink, #FFF0F7);
+}
 
-.form {
+textarea:user-invalid:focus {
+  border: 1px solid var(--LP-Red, $accent-red);
+  background: var(--LP-Lpink, #FFF0F7);
+}
 
+textarea:focus {
+	border: 1px solid $main;
+	background: var(--LP-Light-Blue, $sub-blue-l);
 }
 
 .form__item {
@@ -311,23 +369,26 @@ textarea {
 	}
 }
 
-
-
 .form__item:not(:first-child) {
-  margin-top: rem(24);
+  margin-top: rem(30);
+	@include mq('md') {
+		margin-top: rem(32);
+	}
 }
 
 .form__item dt {
   color: var(--LP-Blown, $blown);
   font-feature-settings: 'pref' on;
   font-family: $base-font-family;
-  font-size: rem(16);
+  font-size: rem(14);
   font-style: normal;
   font-weight: $bold;
-  line-height: calc(25.6 / 16);
+  line-height: calc(22.4 / 14);
 	@include mq('md') {
 		width: 26%;
 		flex-shrink: 0;
+		font-size: rem(16);
+		line-height: calc(25.6 / 16);
 	}
 }
 
@@ -351,7 +412,7 @@ textarea {
 }
 
 .form__checkbox {
-  margin-top: rem(24);
+  margin-top: rem(20);
   text-align: center;
   @include mq('md') {
     margin-top: rem(40);
@@ -378,7 +439,7 @@ textarea {
 	color: $accent-red;
 }
 
-.error {
-  border: 1px solid var(--LP-Red, $accent-red);
+.is-error {
+	border: 1px solid var(--LP-Red, $accent-red);
   background: var(--LP-Lpink, #FFF0F7);
 }

@@ -13,6 +13,33 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     }
   });
 
+  // グローバルナビメニューのリンクをクリックしたらページを閉じる
+  $(function () {
+    $(".js-sp-nav ul li a").on("click", function () {
+      $(".js-hamburger").removeClass('is-active');
+      $(".js-sp-nav").fadeOut(300);
+    });
+  });
+
+  // ヘッダーの高さ分下に下げてスクロール
+  $('a[href^="#"]').click(function() {
+    let headerHeight = $(".header").innerHeight();
+    let speed = 300;
+    let id = $(this).attr("href");
+    let target = id === "#" ? "html" : $(id);
+    let position = $(target).offset().top - headerHeight; // ヘッダーの高さ分を引く
+    $("html, body").animate(
+      {
+        scrollTop: position
+      },
+      speed,
+      function() {
+        $("body").removeClass('is-active');
+      }
+    );
+    return false;
+  });
+
   // ページトップボタン
   $(function () {
     const pageTop = $("#to-top");
@@ -57,14 +84,19 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
   var swiper = new Swiper(".recommended-spots__swiper", {
     loop: true,
-    loopedSlides: 7,
-    slidesPerView: 1.55, // 一度に表示する枚数
+    slidesPerView: "auto",
     centeredSlides: true, // アクティブなスライドを中央にする
     spaceBetween: 16,
     autoplay: {
       delay: 2500,
     },
 
+    breakpoints: {
+      768: {
+        centeredSlides: false, // アクティブなスライドを中央にする
+        spaceBetween: 32,
+      },
+    },
     breakpoints: {
       768: {
         slidesPerView: 3.25, // 一度に表示する枚数
@@ -110,30 +142,31 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 });
 
 // お問い合わせフォームエラーメッセージ
-$(document).ready(function(){
-  $("form").submit(function(event) {
-    // エラーメッセージをクリアする
-    $(".error-message").remove();
-    // エラースタイルを削除する
-    $("input, select, textarea").removeClass("is-error"); // .is-errorクラスを削除する
-    
-    // 必須フィールドをチェックする
-    $("input[required], select[required], textarea[required]").each(function(){
-      if ($(this).val() === '') {
-        event.preventDefault(); // フォーム送信を中止する
-        $(this).after('<div class="error-message">このフィールドは必須です。</div>');
-        $(this).addClass("is-error"); // .is-errorクラスを追加する
-      }
-    });
-    
-    // プライバシーチェックボックスをチェックする
-    if (!$("input[name='privacy']").is(':checked')) {
-      event.preventDefault(); // フォーム送信を中止する
-      $(".form__checkbox").append('<div class="error-message">※プライバシーポリシーに同意する必要があります。</div>');
-      $("input[name='privacy']").addClass("is-error"); // .is-errorクラスを追加する
+document.addEventListener("DOMContentLoaded", function() {
+  var form = document.getElementById("myForm");
+
+  // フォームの送信時にバリデーションを行う
+  form.addEventListener("submit", function(event) {
+    // フォームのバリデーションを実行
+    if (!form.checkValidity()) {
+      // フォームが妥当でない場合はフォームの送信をキャンセル
+      event.preventDefault();
     }
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 });

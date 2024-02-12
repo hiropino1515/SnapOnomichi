@@ -7,7 +7,7 @@
   row-gap: rem(15);
   column-gap: rem(15);
   @include mq('md') {
-    row-gap: rem(40);
+    row-gap: rem(28);
     column-gap: rem(32);
   }
 }

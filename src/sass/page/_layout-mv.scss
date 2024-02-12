@@ -1,8 +1,10 @@
 @use 'global' as *;
 
 .layout-mv {
-  padding-top: rem(81);
+  margin-top: rem(64);
+  padding-top: rem(17);
   @include mq('md') {
-    padding-top: rem(99);
+    margin-top: rem(64);
+    padding-top: rem(34);
   }
 }

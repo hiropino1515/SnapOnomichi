@@ -1,8 +1,8 @@
 @use 'global' as *;
 
 .layout-prizes {
-  margin-top: rem(57.67);
+  margin-top: rem(54);
   @include mq('md') {
-    margin-top: rem(120);
+    margin-top: rem(152);
   }
 }

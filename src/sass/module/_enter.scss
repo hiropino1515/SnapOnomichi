@@ -2,7 +2,6 @@
 
 .enter {
   position: relative;
-  overflow: hidden;
 }
 
 .enter__list {
@@ -74,7 +73,7 @@
 }
 
 .enter__item-title {
-  margin-top: rem(16);
+  margin-top: rem(12);
   color: var(--LP-Blown, $blown);
   text-align: center;
   font-feature-settings: 'pref' on;
@@ -130,7 +129,7 @@
 }
 
 .enter__item-account {
-  margin-top: rem(16);
+  margin-top: rem(14);
   margin-inline: auto;
   padding:rem(8) rem(4);
   display: flex;
@@ -191,7 +190,7 @@
 }
 
 .enter__item-line {
-  margin-top: rem(16);
+  margin-top: rem(8);
   width: rem(7);
   height: rem(34);
   display: inline-block;
@@ -203,15 +202,15 @@
   margin-inline: auto;
   padding-bottom: rem(4);
   @include mq('md') {
-    margin-top: rem(40);
+    margin-top: rem(48);
   }
 }
 
 .enter__bg-cat1 {
   content: "";
   position: absolute;
-  top: rem(16);
-  right: calc(50% - min(50vw, 32rem));
+  top: rem(70);
+  right: calc(50% - min(58vw, 32rem));
   width: rem(94);
   height: rem(80);
   background-image: url(../images/common/enter_bg_cat1.png);
@@ -219,18 +218,19 @@
   background-size: contain;
   @include mq('md') {
     background-image: url(../images/common/enter_bg_cat1-pc.png);
-    top: rem(88);
-    right: calc(45% - min(48vw, 36rem));
+    top: rem(98);
+    right: calc(42% - min(35vw, 36rem));
     width: rem(214);
     height: rem(181);
+    z-index: 1;
   }
 }
 
 .enter__bg-cat2 {
   content: "";
   position: absolute;
-  top: rem(8);
-  right: calc(45% - min(30vw, 32rem));
+  top: rem(64);
+  right: calc(36% - min(30vw, 32rem));
   width: rem(105);
   height: rem(63);
   background-image: url(../images/common/enter_bg_cat2.png);
@@ -248,8 +248,8 @@
 .enter__bg-pawpads-right1 {
   content: "";
   position: absolute;
-  top: rem(80);
-  right: calc(50% - min(45vw, 32rem));
+  top: rem(138);
+  right: calc(36% - min(44vw, 32rem));
   width: rem(54);
   height: rem(120);
   background-image: url(../images/common/enter_bg_pawpads-right1.png);
@@ -257,17 +257,18 @@
   background-size: contain;
   @include mq('md') {
     background-image: url(../images/common/enter_bg_pawpads-right1.png);
-    top: rem(160);
-    right: calc(40% - min(43vw, 36rem));
+    top: rem(256);
+    right: calc(40% - min(44vw, 36rem));
     width: rem(100);
     height: rem(220);
+    z-index: 0;
   }
 }
 
 .enter__bg-pawpads-right2 {
   content: "";
   position: absolute;
-  top: rem(888);
+  top: rem(944);
   right: calc(50% - min(45vw, 32rem));
   width: rem(54);
   height: rem(120);
@@ -282,7 +283,7 @@
 .enter__bg-map {
   content: "";
   position: absolute;
-  top: rem(8);
+  top: rem(64);
   left: calc(50% - min(50vw, 32rem));
   width: rem(149);
   height: rem(223);
@@ -293,7 +294,7 @@
   @include mq('md') {
     background-image: url(../images/common/enter_bg_map-pc.png);
     top: rem(56);
-    left: calc(40% - min(50vw, 36rem));
+    left: calc(40% - min(38vw, 35rem));
     width: rem(420);
     height: rem(628);
   }
@@ -302,7 +303,7 @@
 .enter__bg-pawpads-left {
   content: "";
   position: absolute;
-  top: rem(560);
+  top: rem(614);
   left: calc(50% - min(45vw, 32rem));
   width: rem(54);
   height: rem(120);
@@ -311,8 +312,9 @@
   background-size: contain;
   @include mq('md') {
     background-image: url(../images/common/enter_bg_pawpads-left-pc.png);
-    left: calc(40% - min(50vw, 36rem));
+    left: calc(40% - min(44vw, 36rem));
     width: rem(100);
     height: rem(220);
+    top: rem(694);
   }
 }

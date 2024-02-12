@@ -1,16 +1,5 @@
 @use "global" as *;
 
-.faq {
-
-}
-.faq__inner {
-
-}
-
-.faq__title {
-
-}
-
 .faq__accordion {
   display: flex;
   flex-direction: column;
@@ -27,13 +16,13 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: rem(12) rem(16);
+  padding: rem(10) rem(16);
   border: 2px solid var(--LP-Blown, $blown);
   background-color: $white;
   border-radius: rem(12) rem(12) rem(12) rem(12);
   transition: all .3s;
   @include mq('md') {
-    padding: rem(24);
+    padding: rem(20);
   }
 }
 
@@ -43,7 +32,10 @@
 }
 
 .faq__question:not(:first-child) {
-  margin-top: rem(12);
+  margin-top: rem(11);
+  @include mq('md') {
+    margin-top: rem(24);
+  }
 }
 
 .faq__question p {
@@ -100,7 +92,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url(../images/common/faq_icon-minus.png);
+  background-image: url(../images/common/faq_icon-plus.png);
   background-repeat: no-repeat;
   background-size: contain;
   @include mq('md') {
@@ -117,7 +109,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url(../images/common/faq_icon-plus.png);
+  background-image: url(../images/common/faq_icon-minus.png);
   background-repeat: no-repeat;
   background-size: contain;
   @include mq('md') {

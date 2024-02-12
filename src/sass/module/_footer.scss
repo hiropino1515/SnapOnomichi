@@ -13,7 +13,7 @@
     position: absolute;
     width: rem(100);
     height: rem(220);
-    top: rem(80);
+    top: rem(-40);
     right: calc(50% - min(48vw, 42rem));
     background-image: url(../images/common/footer_bg_pawpads.png);
     background-repeat: no-repeat;
@@ -37,6 +37,10 @@
   font-style: normal;
   font-weight: $regular;
   line-height: calc(25 / 20);
+  @include mq('md') {
+    font-size: rem(24);
+    line-height: calc(30 / 24);
+  }
 }
 
 .footer__sns {
@@ -82,6 +86,7 @@
   @include mq('md') {
     font-size: rem(100);
     line-height: calc(125 / 100);
+    top: rem(-8);
   }
 }
 
@@ -92,7 +97,7 @@
   flex-direction: column;
   border-radius: rem(16);
   @include mq('md') {
-    margin-top: rem(120);
+    margin-top: rem(112);
     flex-direction: row-reverse;
   }
 }
@@ -123,7 +128,7 @@
 }
 
 .footer__body {
-  padding: rem(24);
+  padding: rem(26);
   background-color: $white;
   border-radius: 0 0 rem(16) rem(16);
   @include mq('md') {
@@ -158,11 +163,14 @@
 
 .footer__meta dl:nth-child(n+2) {
   margin-top: rem(8);
+  @include mq('md') {
+    margin-top: rem(12);
+  }
 }
 
 .footer__meta dt {
   padding-left: rem(16);
-  width: rem(80);
+  width: rem(64);
   color: var(--LP-Blown, $blown);
   font-family: $base-font-family;
   font-size: rem(12);
@@ -171,7 +179,9 @@
   line-height: calc(19.2 / 12);
   text-align-last: left;
   position: relative;
+  flex-shrink: 0;
   @include mq('md') {
+    width: rem(80);
     font-size: rem(16);
   }
 }
@@ -196,8 +206,12 @@
   font-style: normal;
   font-weight: $regular;
   line-height: calc(19.2 / 12);
+  padding-left: rem(16);
+  white-space: nowrap;
   @include mq('md') {
+    padding-left: rem(40);
     font-size: rem(16);
+    line-height: calc(25.6 / 16);
   }
 }
 
