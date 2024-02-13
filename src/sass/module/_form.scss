@@ -46,13 +46,13 @@ $check-weight: 2px;//チェックマークの線の太さ(px)
 /*テキストエリアの指定*/
 $textarea-height: rem(160);
 
-[type="text"],
-[type="search"],
-[type="tel"],
-[type="url"],
-[type="email"],
-[type="password"],
-[type="date"],
+input[type="text"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
 textarea {
 	/*↓リセットCSS */
 	border: none;
@@ -130,13 +130,13 @@ input[type="text"]:user-invalid,
 	background: $gray;
 }
 
-[type="tel"] {
+input[type="tel"] {
   max-width: rem(200);
   width: 100%;
 }
 button,
-[type="button"],
-[type="submit"] {
+input[type="button"],
+input[type="submit"] {
 	/*↓リセットCSS */
 	margin: 0;
 	background-image: none;
@@ -167,7 +167,7 @@ button,
 	}
 }
 
-[type="radio"] {
+input[type="radio"] {
 	display: none;
 
 	+ span {
@@ -219,7 +219,7 @@ button,
 	}
 }
 
-[type="checkbox"] {
+input[type="checkbox"] {
 	display: none;
 
 	+ span {
@@ -275,12 +275,12 @@ button,
 	}
 }
 
-[type="checkbox"]:user-invalid + span::before {
+input[type="checkbox"]:user-invalid + span::before {
 	border: 1px solid var(--LP-Red, $accent-red);
 	background: var(--LP-Lpink, #FFF0F7);
 }
 
-[type="checkbox"]:focus + span::before {
+input[type="checkbox"]:hover + span::before {
 	border: 1px solid $main;
 	background: var(--LP-Light-Blue, $sub-blue-l);
 }

@@ -97,13 +97,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         spaceBetween: 32,
       },
     },
-    breakpoints: {
-      768: {
-        slidesPerView: 3.25, // 一度に表示する枚数
-        centeredSlides: false, // アクティブなスライドを中央にする
-        spaceBetween: 32,
-      },
-    },
 
     // Navigation arrows
     navigation: {
@@ -116,12 +109,15 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
    $(function () {
     // 最初は閉じた状態に
     $(".faq__accordion .js-accordion + .faq__answer").hide();
+    // 最初の項目のみ開く
+    $(".faq__accordion .js-accordion:first").next(".faq__answer").slideDown(300);
+    $(".faq__accordion .js-accordion:first").toggleClass("open");
     // タイトルをクリックすると
     $(".js-accordion").on("click", function () {
       // クリックした次の要素を開閉
       $(this).next(".faq__answer").slideToggle(300);
       // タイトルにopenクラスを付け外ししてプラスマイナスを変更
-      $(this).toggleClass("open",300);
+      $(this).toggleClass("open", 300);
     });
   });
 
@@ -152,7 +148,7 @@ $(function() {
       event.preventDefault();
       return;
     }
-    
+
     // バリデーションが成功した場合、アラートを表示
     alert("送信が完了しました！");
   });
