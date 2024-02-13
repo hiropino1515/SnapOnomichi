@@ -210,7 +210,7 @@
   content: "";
   position: absolute;
   top: rem(70);
-  right: calc(50% - min(58vw, 32rem));
+  right: calc(50% - min(58vw, 14rem));
   width: rem(94);
   height: rem(80);
   background-image: url(../images/common/enter_bg_cat1.png);
@@ -230,7 +230,7 @@
   content: "";
   position: absolute;
   top: rem(64);
-  right: calc(36% - min(30vw, 32rem));
+  right: calc(50% - min(48vw, 10rem));
   width: rem(105);
   height: rem(63);
   background-image: url(../images/common/enter_bg_cat2.png);
@@ -249,7 +249,7 @@
   content: "";
   position: absolute;
   top: rem(138);
-  right: calc(36% - min(44vw, 32rem));
+  right: calc(50% - min(44vw, 17rem));
   width: rem(54);
   height: rem(120);
   background-image: url(../images/common/enter_bg_pawpads-right1.png);
@@ -269,7 +269,7 @@
   content: "";
   position: absolute;
   top: rem(944);
-  right: calc(50% - min(45vw, 32rem));
+  right: calc(50% - min(45vw, 17rem));
   width: rem(54);
   height: rem(120);
   background-image: url(../images/common/enter_bg_pawpads-right2.png);
@@ -284,7 +284,7 @@
   content: "";
   position: absolute;
   top: rem(64);
-  left: calc(50% - min(50vw, 32rem));
+  left: calc(50% - min(50vw, 18rem));
   width: rem(149);
   height: rem(223);
   background-image: url(../images/common/enter_bg_map.png);
@@ -304,7 +304,7 @@
   content: "";
   position: absolute;
   top: rem(614);
-  left: calc(50% - min(45vw, 32rem));
+  left: calc(50% - min(45vw, 17rem));
   width: rem(54);
   height: rem(120);
   background-image: url(../images/common/enter_bg_pawpads-left.png);

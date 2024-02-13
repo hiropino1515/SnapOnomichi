@@ -101,7 +101,7 @@ textarea {
 	background: var(--LP-Light-Blue, $sub-blue-l);
 }
 
-[type="text"]:user-invalid,
+input[type="text"]:user-invalid,
 [type="search"]:user-invalid,
 [type="tel"]:user-invalid,
 [type="url"]:user-invalid,

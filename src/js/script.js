@@ -141,19 +141,40 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
 });
 
-// お問い合わせフォームエラーメッセージ
-document.addEventListener("DOMContentLoaded", function() {
-  var form = document.getElementById("myForm");
-
-  // フォームの送信時にバリデーションを行う
-  form.addEventListener("submit", function(event) {
+// お問い合わせフォームバリデーション
+$(function() {
+  // フォームが送信されたときのイベントをキャプチャ
+  $("#myForm").submit(function(event) {
     // フォームのバリデーションを実行
+    var form = document.getElementById('myForm');
     if (!form.checkValidity()) {
-      // フォームが妥当でない場合はフォームの送信をキャンセル
+      // バリデーションが失敗した場合、フォームの送信をキャンセル
       event.preventDefault();
+      return;
     }
+    
+    // バリデーションが成功した場合、アラートを表示
+    alert("送信が完了しました！");
   });
 });
+
+
+
+
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   var form = document.getElementById("myForm");
+
+//   // フォームの送信時にバリデーションを行う
+//   form.addEventListener("submit", function(event) {
+//     // フォームのバリデーションを実行
+//     if (!form.checkValidity()) {
+//       // フォームが妥当でない場合はフォームの送信をキャンセル
+//       event.preventDefault();
+//     }
+//   });
+// });
 
 
 

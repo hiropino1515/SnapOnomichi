@@ -220,15 +220,15 @@
 
 .prizes-card__zoom-icon {
   position: absolute;
-  bottom: rem(15);
-  right: rem(16);
+  bottom: rem(8);
+  right: rem(6);
   width: rem(11.52);
   height: rem(11.52);
   @include mq('md') {
     width: rem(32);
     height: rem(32);
-    bottom: rem(8);
-    right: rem(9);
+    bottom: rem(16);
+    right: rem(12);
   }
 }
 

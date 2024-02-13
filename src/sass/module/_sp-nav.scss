@@ -24,7 +24,7 @@
 .sp-nav__items {
   display: grid;
   justify-content: center;
-  padding-top: rem(66);
+  padding-top: rem(62);
   padding-bottom: rem(148);
   min-height: 100vh;
   z-index: 300;
@@ -44,7 +44,7 @@
   font-weight: $regular;
   line-height: calc(22.4 / 14);
   width: 100%;
-  height: inherit;
+  padding: rem(20) 0;
   transition: all 0.3s;
 }
 
@@ -55,5 +55,6 @@
 }
 
 .sp-nav__button {
+  margin-top: rem(20);
   text-align: center;
 }
