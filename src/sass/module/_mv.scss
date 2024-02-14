@@ -140,8 +140,10 @@
   background-image: url(../images/common/mv_food.png);
   background-repeat: no-repeat;
   background-size: cover;
+  aspect-ratio: 86 /141;
   z-index: 1;
   @include mq('md') {
+    aspect-ratio: 202 / 332;
     width: rem(202);
     height: rem(332);
     left: calc(50% - min(48vw, 26.5rem));
@@ -158,8 +160,10 @@
   background-image: url(../images/common/mv_cat1.png);
   background-repeat: no-repeat;
   background-size: cover;
+  aspect-ratio: 62 / 69;
   z-index: 1;
   @include mq('md') {
+    aspect-ratio: 170 / 190;
     width: rem(170);
     height: rem(190);
     bottom: rem(52);

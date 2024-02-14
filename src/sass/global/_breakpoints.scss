@@ -62,6 +62,7 @@ $mediaquerys: (
 
   //モバイルのみ表示
   .u-mobile {
+    display: block;
     @include mq("md") {
       display: none;
     }
